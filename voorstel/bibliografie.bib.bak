@@ -27,7 +27,7 @@
 }
 
 @Book{Harris2015,
-  author    = {Harris, Sarah and Harris, David},
+  author    = {Harris Sarah, Harris David},
   title     = {Digital Design and Computer Architecture: ARM Edition},
   chapter   = {6},
   edition   = {1st},
