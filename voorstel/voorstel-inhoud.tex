@@ -1,51 +1,40 @@
 %---------- Inleiding ---------------------------------------------------------
 
-\section{Introductie} % The \section*{} command stops section numbering
+\section{Introductie en State-of-the-art} % The \section*{} command stops section numbering
 \label{sec:introductie}
 
-Hier introduceer je werk. Je hoeft hier nog niet te technisch te gaan.
+\subsection{Wat is een ARM processor?}
+De naam ARM is een acroniem die gebruikt wordt om te refereren naar het bedrijf die verantwoordelijk is voor de ARM architectuur alsook de architectuur zelf. Initieel stond ARM voor Acorn RISC Machine, maar dit werd later aangepast naar Advanced RISC Machines. Het bedrijf werd officieel opgericht in 1990 als een samenwerkingsverband tussen Acorn Computers, Apple Inc. en VLSI Technology \autocite{Walshe2015}. Jaarlijk worden er zo een tien miljard ARM processors verkocht waarvan de grootste groep wordt gebruikt in mobiele toestellen zoals smartphones en tablet computers. Dit is echter niet de enige afzetmarkt. ARM processoren zijn terug te vinden in zowat elke categorie van apparaten, gaande van drankautomaten tot servers \autocite{Harris2015}. ARM, in tegenstelling tot andere chipfabrikanten zoals Intel en AMD verleent licenties om processoren te maken als onderdeel van een System-on-a-chip (SoC). Dit houdt in dat technologie giganten zoals Samsung, Apple en Qualcomm ARM processoren ontwikkelen op basis van gekochte licenties of op basis van micro architecturen die intern onder licentie van ARM zijn ontwikkeld \autocite{Asghar2020}. Zoals de naam doet vermoeden maken ARM processoren gebruik van de Reduced Instruction Set Computer (RISC) architectuur. Dit in tegenstelling tot x86 processoren die gebruikmaken van de Complex Instruction Set Computer (CISC) architectuur \autocite{Harris2015}. 
 
-Je beschrijft zeker:
+\subsection{Waarom kiezen voor ARM processoren?}
+Traditionele x86 processoren die gebruikt worden in desktop en server toestellen liggen aan de basis van van het torenhoge energieverbruik van datacenters. Dit hoge energieverbruik is niet enkel te wijten aan de CISC architectuur, maar ook aan de apparatuur die nodig is om de processoren af te koelen. Aan de andere kant situeren zich ARM processoren die een goede balans leveren tussen performantie en energieverbruik. Deze relatie wordt vaak uitgedrukt als prestatie per watt. Zoals eerder vermeld maken ARM processoren gebruik van de RISC architectuur. Deze is gekenmerkt door een vaste instructie grootte en een simultane toegankelijkheid van opcode en operand. RISC instructies zijn eenvoudiger van aard dan hun CISC tegenhangers. Het gevolg daarvan is dat er meer RISC instructies nodig zijn om eenzelfde taak uit te voeren met CISC instructies. Dit houdt uiteraard in dat het geheugenverbruik van het systeem groter is. Dit kon vroeger tot problemen leiden bij computers met een geringe hoeveelheid werkgeheugen, maar bij moderne systemen is dit uiteraard geen probleem meer \autocite{Aroca2012}. Een andere typerende eigenschap van RISC instructies is dat ze worden uitgevoerd in één klokcyclus. Dit leidt tot minder latentie en een kortere systeem responstijd. Een ander typerend kenmerk voor ARM processoren is SoC architectuur. Dit houdt in dat meerdere functies op één chip worden geïntegreerd. Dit leidt tot een systeem die minder componenten heeft en die bijgevolg kleiner is van omvang. Additioneel leidt dit er ook toe dat het systeem goedkoper is om te produceren en een lager energieverbruik heeft \autocite{Ravali2016}.
 
-\begin{itemize}
-  \item de probleemstelling en context
-  \item de motivatie en relevantie voor het onderzoek
-  \item de doelstelling en onderzoeksvraag/-vragen
-\end{itemize}
+\subsection{Implicaties bij het gebruik van de ARM architectuur}
+Zoals eerder vermeld maken ARM en x86 processoren gebruik van een verschillende instructieset. Dit houdt in dat programma’s worden ontworpen met die die instructieset in gedachten. Het gevolg van deze verschillende manier van werken is dat software moet worden aangepast om functioneel te zijn op ARM processoren en vice versa. Dit brengt uiteraard extra werk met zich mee alsook additionele kosten. Het porten van software zoals dit noemt kan leiden tot meer werk dan voorzien en dit kan ook gepaard gaan met het aanschaffen van additionele test hardware. Eenmaal het porten van de software succesvol is verlopen kan het zijn dat de software nog steeds prestatie- of compatibiliteitsproblemen ondervindt. Dit probleem komt vaak voort uit bepaalde software libraries of packages die niet compatibel zijn met ARM processoren. Het porten van x86 software naar software die probleemloos functioneert op ARM toestellen is een proces die de laatste jaren in een stroomversnelling is terechtgekomen dankzij de ontwikkeling van een nieuwe generatie aan ARM toestellen. Zowel Microsoft als Apple hebben toestellen op de markt gebracht die gebruikmaken van ARM processoren. Dit in de vorm van de bekende Snapdragon processoren die ontwikkeld zijn door Qualcomm en de recente M reeks processoren van Apple \autocite{Ford2021}.
 
-%---------- Stand van zaken ---------------------------------------------------
-
-\section{State-of-the-art}
-\label{sec:state-of-the-art}
-
-Hier beschrijf je de \emph{state-of-the-art} rondom je gekozen onderzoeksdomein. Dit kan bijvoorbeeld een literatuurstudie zijn. Je mag de titel van deze sectie ook aanpassen (literatuurstudie, stand van zaken, enz.). Zijn er al gelijkaardige onderzoeken gevoerd? Wat concluderen ze? Wat is het verschil met jouw onderzoek? Wat is de relevantie met jouw onderzoek?
-
-Verwijs bij elke introductie van een term of bewering over het domein naar de vakliteratuur, bijvoorbeeld~\autocite{Doll1954}! Denk zeker goed na welke werken je refereert en waarom.
-
-% Voor literatuurverwijzingen zijn er twee belangrijke commando's:
-% \autocite{KEY} => (Auteur, jaartal) Gebruik dit als de naam van de auteur
-%   geen onderdeel is van de zin.
-% \textcite{KEY} => Auteur (jaartal)  Gebruik dit als de auteursnaam wel een
-%   functie heeft in de zin (bv. ``Uit onderzoek door Doll & Hill (1954) bleek
-%   ...'')
-
-Je mag gerust gebruik maken van subsecties in dit onderdeel.
+\subsection{Doelstelling van dit onderzoek}
+Het doel van dit onderzoek is de verschillen tussen moderne ARM- en x86-processoren te onderzoeken. Op basis van deze kennis is het de bedoeling om de voordelen, nadelen, gebruiksvriendelijkheid en energiezuinigheid van ARM processoren in kaart te brengen.
+Verder zal er ook onderzocht worden in welke mate het landschap van desktop besturingssystemen en software klaar is voor de coëxistentie van deze twee architecturen. Tenslotte zal een analyse uitwijzen of hedendaagse professionals kunnen vertrouwen op ARM computers als hun enige vorm van computergebruik.
 
 %---------- Methodologie ------------------------------------------------------
 \section{Methodologie}
 \label{sec:methodologie}
 
-Hier beschrijf je hoe je van plan bent het onderzoek te voeren. Welke onderzoekstechniek ga je toepassen om elk van je onderzoeksvragen te beantwoorden? Gebruik je hiervoor experimenten, vragenlijsten, simulaties? Je beschrijft ook al welke tools je denkt hiervoor te gebruiken of te ontwikkelen.
+In de eerste fase van dit onderzoek zal de ARM architectuur onderzocht worden. Er zal ook aandacht gevestigd worden aan de gelijkenissen en verschillen tussen de ARM en x86 processor architectuur. Op basis van die kennis zullen kenmerken zoals performantie, energieverbruik, gebruiksvriendelijkheid, kostprijs en software ondersteuning bestudeerd worden.  
+
+Het technische luik van deze studie zal zich enerzijds focussen op scenario's die per niveau zullen stijgen van complexiteit en een proof-of-concept applicatie. Aan de hand van de scenario's zal onderzocht worden welk type van professional kan overschakelen naar ARM toestellen voor zijn/haar dagelijkse taken beginnend bij kantoorsoftware en gaande tot geavanceerde software die gebruikt wordt door informatici. 
+
+Anderzijds zal de proof-of-concept applicatie een van de grootste voordelen van de ARM processorarchitectuur bevestigen namelijk de mogelijkheid van het schrijven van software dat uitvoerbaar is op verschillende types apparaten gaande van desktop tot laptops, tablets en smartphones.
 
 %---------- Verwachte resultaten ----------------------------------------------
 \section{Verwachte resultaten}
 \label{sec:verwachte_resultaten}
 
-Hier beschrijf je welke resultaten je verwacht. Als je metingen en simulaties uitvoert, kan je hier al mock-ups maken van de grafieken samen met de verwachte conclusies. Benoem zeker al je assen en de stukken van de grafiek die je gaat gebruiken. Dit zorgt ervoor dat je concreet weet hoe je je data gaat moeten structureren.
+Gezien de interesse in ARM producten van consumenten en professionals wordt er verwacht dat de meest gebruikte software vlot ondersteund wordt op het ARM platform. Dit voor zowel Windows on ARM, MacOS en Linux. Er wordt wel verwacht dat Linux en MacOS een meer afgewerkte desktop ervaring kunnen bieden bij het gebruik van een ARM processor. De oorzaak van dit fenomeen is enerzijds te verklaren door de populariteit van single board computers zoals de Raspberry Pi en de Arduino. Deze ARM toestellen worden namelijk al enkele jaren gebruikt voor projecten door professionals en hobbyisten. Anderzijds hebben we de Mac computers die zich momenteel in een transitieperiode bevinden van Intel x86 processoren naar ARM processoren. Dit gezegd zijnde wordt er verwacht dat software compatibiliteit op het ARM platform niet zal voldoen aan de compatibiliteit die men kan vinden op x86 platformen. De voornaamste tekortkomingen situeren zich op het Windows on ARM platform die zich na enkele jaren nog steeds in een testfase bevindt
 
 %---------- Verwachte conclusies ----------------------------------------------
 \section{Verwachte conclusies}
 \label{sec:verwachte_conclusies}
 
-Hier beschrijf je wat je verwacht uit je onderzoek, met de motivatie waarom. Het is \textbf{niet} erg indien uit je onderzoek andere resultaten en conclusies vloeien dan dat je hier beschrijft: het is dan juist interessant om te onderzoeken waarom jouw hypothesen niet overeenkomen met de resultaten.
+Met voldoende tijd en vastberadenheid kan iedereen de overstap maken naar een ARM-computer voor zijn dagelijkse en professionele behoeften. Dat gezegd zijnde, zal de ervaring niet altijd zo gestroomlijnd zijn als op traditionele x86 hardware. De grootste problemen liggen bij de software-ondersteuning, vooral bij de bereidheid van software ontwikkelaars om hun software te porten naar ARM-apparaten. Hoe meer ARM-hardware er beschikbaar is, hoe meer softwareleveranciers de noodzaak zullen inzien om hun software te porten. 
 

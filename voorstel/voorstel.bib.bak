@@ -1,0 +1,59 @@
+@Article{Aroca2012,
+  author  = {Aroca, Rafael and Gonçalves, Luiz},
+  title   = {Towards green data centers: A comparison of x86 and ARM architectures power efficiency},
+  doi     = {10.1016/j.jpdc.2012.08.005},
+  pages   = {1770-1780},
+  volume  = {72},
+  journal = {Journal of Parallel and Distributed Computing},
+  month   = {12},
+  year    = {2012},
+}
+
+@Online{Walshe2015,
+  author = {Ben Walshe},
+  date   = {2015-04-21},
+  title  = {A Brief History of Arm: Part 1},
+  url    = {https://community.arm.com/arm-community-blogs/b/architectures-and-processors-blog/posts/a-brief-history-of-arm-part-1},
+}
+
+@Article{Asghar2020,
+  author  = {Asghar, Muhammad},
+  title   = {A Review of ARM Processor Architecture History, Progress and Applications},
+  doi     = {10.36785/BUITEMS.JAES.446},
+  pages   = {171-179},
+  journal = {Journal of Applied and Emerging Sciences},
+  month   = {12},
+  year    = {2020},
+}
+
+@Book{Harris2015,
+  author    = {Harris, Sarah and Harris, David},
+  title     = {Digital Design and Computer Architecture: ARM Edition},
+  chapter   = {6},
+  edition   = {1st},
+  isbn      = {0128000562},
+  publisher = {Morgan Kaufmann Publishers Inc.},
+  abstract  = {Digital Design and Computer Architecture: ARM Edition takes a unique and modern approach to digital design. Beginning with digital logic gates and progressing to the design of combinational and sequential circuits, Harris and Harris use these fundamental building blocks as the basis for what follows: the design of an actual ARM processor. With over 75% of the worlds population using products with ARM processors, the design of the ARM processor offers an exciting and timely application of digital design while also teaching the fundamentals of computer architecture. System Verilog and VHDL are integrated throughout the text in examples illustrating the methods and techniques for CAD-based circuit design. By the end of this book, readers will be able to build their own microprocessor and will have a top-to-bottom understanding of how it works. Harris and Harris have combined an engaging and humorous writing style with an updated and hands-on approach to digital design. Covers the fundamentals of digital logic design and reinforces logic concepts through the design of an ARM microprocessor. Features side-by-side examples of the two most prominent Hardware Description Languages (HDLs)-System Verilog and VHDL-which illustrate and compare the ways each can be used in the design of digital systems. Includes examples throughout the text that enhance the readers understanding and retention of key concepts and techniques. The Companion website includes a chapter on I/O systems with practical examples that show how to use the Raspberry Pi computer to communicate with peripheral devices such as LCDs, Bluetooth radios, and motors. The Companion website also includes appendices covering practical digital design issues and C programming as well as links to CAD tools, lecture slides, laboratory projects, and solutions to exercises.},
+  address   = {San Francisco, CA, USA},
+  year      = {2015},
+}
+
+@InProceedings{Ford2021,
+  author    = {Ford, Blake W. and Qasem, Apan and Tešić, Jelena and Zong, Ziliang},
+  booktitle = {2021 IEEE International Conference on Networking, Architecture and Storage (NAS)},
+  title     = {Migrating Software from x86 to ARM Architecture: An Instruction Prediction Approach},
+  doi       = {10.1109/NAS51552.2021.9605443},
+  pages     = {1-6},
+  year      = {2021},
+}
+
+@Article{Ravali2016,
+  author = {Ravali, Mathan, Ravi},
+  title  = {Performance analysis of an efficient ARMv8 processor},
+  pages  = {7055-7058},
+  volume = {11},
+  month  = {06},
+  year   = {2016},
+}
+
+@Comment{jabref-meta: databaseType:biblatex;}
