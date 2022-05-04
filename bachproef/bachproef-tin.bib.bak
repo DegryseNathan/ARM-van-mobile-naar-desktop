@@ -222,11 +222,4 @@
   title  = {ARM7TDMI Technical Reference Manual},
 }
 
-@Online{WatElectronics2019,
-  date   = {2019-07-29},
-  editor = {WatElectronics.com},
-  title  = {An Introduction to ARM Architecture with Each Module’s Working Principle},
-  url    = {https://www.watelectronics.com/arm-processor-architecture-working/},
-}
-
 @Comment{jabref-meta: databaseType:biblatex;}
