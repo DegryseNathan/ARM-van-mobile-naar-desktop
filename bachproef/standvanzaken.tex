@@ -7,11 +7,122 @@
 
 % Pas na deze inleidende paragraaf komt de eerste sectiehoofding.
 
-Dit hoofdstuk bevat je literatuurstudie. De inhoud gaat verder op de inleiding, maar zal het onderwerp van de bachelorproef *diepgaand* uitspitten. De bedoeling is dat de lezer na lezing van dit hoofdstuk helemaal op de hoogte is van de huidige stand van zaken (state-of-the-art) in het onderzoeksdomein. Iemand die niet vertrouwd is met het onderwerp, weet nu voldoende om de rest van het verhaal te kunnen volgen, zonder dat die er nog andere informatie moet over opzoeken \autocite{Pollefliet2011}.
+\section{Architectuur van de ARM processor}
+Om inzicht te krijgen op de werking van ARM processoren is het essentieel om de architectuur van moderne ARM CPU’s te onderzoeken alsook de bijhorende eigenschappen en begrippen. Dit hoofdstuk is geenszins een uitgebreide studie over de werking van ARM-processoren, dat zou namelijk het bestek van dit onderzoek overschrijden. Het doel van dit hoofdstuk is om een beter inzicht te krijgen in begrippen zoals RISC, ARM, Thumb en instruction set architecture. 
 
-Je verwijst bij elke bewering die je doet, vakterm die je introduceert, enz. naar je bronnen. In \LaTeX{} kan dat met het commando \texttt{$\backslash${textcite\{\}}} of \texttt{$\backslash${autocite\{\}}}. Als argument van het commando geef je de ``sleutel'' van een ``record'' in een bibliografische databank in het Bib\LaTeX{}-formaat (een tekstbestand). Als je expliciet naar de auteur verwijst in de zin, gebruik je \texttt{$\backslash${}textcite\{\}}.
-Soms wil je de auteur niet expliciet vernoemen, dan gebruik je \texttt{$\backslash${}autocite\{\}}. In de volgende paragraaf een voorbeeld van elk.
+\subsection{De Reduced Instruction Set Computer}
+De “R” in het acroniem ARM is uiteraard niet willekeurig gekozen. Voluit geschreven staat ARM namelijk voor \textit{Advanced RISC Machines}. De \textit{Reduced Instruction Set Computer} (RISC) processorarchitectuur werd ontworpen door studenten van de gerenommeerde Berkeley University te Californië. Deze nieuwe architectuur werd ontworpen met eenvoud en energiezuinigheid in gedachten. Een extra toegevoegde waarde die komt bij deze architectuur is het concept van de \textit{System-on-a-Chip} (SoC), waar alle functionaliteit aanwezig is in één processor. Door de instructieset beperkt te houden, kan deze worden gecodeerd met een kleiner aantal bits, wat kan leiden tot minder geheugenverbruik en een verkorte uitvoeringstijd. Hoewel ARM het concept van RISC niet heeft bedacht, heeft het veel te maken gehad met de realisatie van de architectuur en het publiekelijk beschikbaar maken ervan \autocite{Fulton2020}. 
 
-\textcite{Knuth1998} schreef een van de standaardwerken over sorteer- en zoekalgoritmen. Experten zijn het erover eens dat cloud computing een interessante opportuniteit vormen, zowel voor gebruikers als voor dienstverleners op vlak van informatietechnologie~\autocite{Creeger2009}.
+ARM processoren worden wereldwijd gebruikt in miljarden toestellen, waarvan het gros te vinden is in toestellen met een focus op mobiliteit. Dit fenomeen is te wijten aan de relatieve eenvoud van de ARM architectuur die het op zijn beurt mogelijk maakt om processoren kleiner te maken. Die kleine omvang is uiteraard voordelig bij het maken van toestellen die beschikken over een geringe oppervlakte en waar een laag energieverbruik essentieel is \autocite{Seal2000}. Zoals eerder werd aangegeven, maken ARM processoren gebruik van de RISC architectuur. Deze architectuur beschikt over de volgende kenmerken:
 
-\lipsum[7-20]
+\begin{itemize}
+    \item Een groot uniform registerbestand. Dit is een array van registergeheugen die gebruikt wordt om toegang te krijgen tot meerdere fysieke registers. Enkele voordelen van deze eigenschap zijn: een lagere hoeveelheid aan geheugenverbruik, verhoogde performantie en lager stroomverbruik \autocite{Postiff2000}.
+    \item Een \textit{load/store}-architectuur, waarbij gegevensverwerkende bewerkingen alleen op registerinhoud werken en niet op de geheugeninhoud \autocite{ARM2022a}.
+    \item Eenvoudige adresseringsmodi, waarbij alle laad- en lees adressen uitsluitend worden bepaald door de registerinhoud en de instructievelden \autocite{Seal2000}.
+    \item Uniforme instructievelden met een vaste lengte, om het decoderen van instructies te vereenvoudigen \autocite{ARM2022a}. 
+\end{itemize}
+
+Een van de grootste voordelen van de RISC architectuur is de toonaangevende energie-efficiëntie die gepaard gaat met het platform. Eén van de meest typerende kenmerken van RISC is dat het één actie uitvoert per instructie. Dit houdt in dat de duurtijd van een instructie slechts één klokcyclus bedraagt, wat op zijn beurt leidt tot een geoptimaliseerde uitvoeringstijd. Omdat de architectuur een vaste instructielengte gebruikt, is het eenvoudiger om een \textit{pipeline}-architectuur te construeren. Dit houdt in dat de processor niet hoeft te wachten op vorige bewerkingen. Een processor \textit{pipeline}-architectuur kan als het ware vergeleken worden met een assemblagelijn waar er nooit gewacht moet worden op onderdelen of instructies. Voor fabrikanten zijn RISC processoren voordelig aangezien deze het ontwerp- en fabricageproces vereenvoudigen. Een additioneel voordeel bij deze aanpak is de lagere kost per processor dankzij het geringe aantal componenten die nodig zijn \autocite{ARM2022}.
+
+\subsection{ARM registers}
+Registers, ook wel registergeheugen genoemd, is een interne vorm van geheugen die gebruikt wordt om waarden op te slaan die vaak worden geraadpleegd door de processor. Deze sectie dient als een introductie waarin de meest belangrijke ARM registers aan bod zullen komen.
+
+\begin{itemize}
+    \item \textbf{Stack pointer:} Dit register wordt gebruikt om de geheugenlocatie bij te houden van het laatste item dat op de stapel werd geplaatst. Zoals de naam al doet vermoeden, wordt de \textit{stack pointer} gebruikt bij PUSH en POP operaties \autocite{ARM2022a}.
+    \item \textbf{Link register:} Dit register wordt aangewend wanneer de geheugenlocatie van een instructie moet bijgehouden worden na een \textit{branch and link} instructie. Deze worden gebruikt bij het maken van een \textit{subroutine call} \autocite{Seal2000}.
+    \item \textbf{Program counter:}  De taak van dit register is het bijhouden van de geheugenlocatie van de instructie die op dat moment wordt uitgevoerd. Bij elke instructie die wordt opgehaald, verhoogt de programmateller zijn opgeslagen waarde met 1 zoals de term \textit{counter} al doet vermoeden \autocite{Seal2000}.
+\end{itemize}
+
+\subsection{De ARM instruction set}
+Een \textit{instruction set architecture} (ISA) wordt gedefinieerd als een abstract model die bepaalt hoe de processor van een computer kan/moet bestuurd worden en hangt af van de gebruikte processorarchitectuur. Een ISA, zijnde ARM, Thumb, x86 of een volstrekt andere ISA, is de enige manier waarop een eindgebruiker kan interageren met computerhardware. Het kan beschouwd worden als de handleiding voor programmeurs aangezien deze abstracte architectuur enkel zichtbaar is voor hen en de compiler. Het is tevens ook de ISA die bepaalt welke gegevenstypes er worden ondersteund op het platform en de wijze waarop de hardware het werkgeheugen beheert. Tenslotte kan een ISA worden uitgebreid gedurende de levenscyclus van een processorarchitectuur \autocite{ARM2022b}.
+
+De ARM instructieset kan worden geabstraheerd in zes grote instructie klassen:
+\begin{itemize}
+    \item \textbf{Branch instructions:} Deze familie van instructies is verantwoordelijk voor het verschaffen van gegevensverwerkende- en laadinstructies die de controlestroom veranderen door te schrijven naar de \textit{program counter}. Verder zijn er ook \textit{branch instructions} die van instructieset kunnen veranderen zodat een bepaalde hoeveelheid code wordt uitgevoerd met de Thumb instructieset. Deze eigenschap maakt het mogelijk om met ARM code de Thumb instructieset te gebruiken \autocite{Seal2000}.
+    \item \textbf{Data-processing instructions:} Zoals de naam al doet vermoeden zijn deze instructies verantwoordelijk voor de verwerking van data. In deze familie van instructies zitten onder andere de rekenkundige en logische instructies. Deze zijn verantwoordelijk voor het uitvoeren van een rekenkundige operatie op twee operanden. Het resultaat van deze bewerking wordt vervolgens weggeschreven in een register. Voorts is er ook nog de subset van de vergelijkende instructies die in staat zijn om het verschil tussen twee operanden op een rekenkundige of logische manier te vergelijken. Op basis van het al dan niet verschillen van de twee operanden wordt er een \textit{flag} bijgewerkt. Verder zijn er ook nog de vermenigvuldigings- en Single Instruction Multiple Data (SIMD) instructies \autocite{Seal2000}.
+    \item \textbf{Status register transfer instructions:} De taak van deze instructies is het overbrengen van data tussen het \textit{current program status register} (CPSR) en het \textit{Solved Program Status Register} (SPSR) \autocite{ARM2022c}.
+    \item \textbf{Load and store instructions:} Deze instructies zijn in staat om een 32-bits woord, een 16-bits woord en een 8-bit byte over te dragen tussen het geheugen en een register \autocite{ARM2022c}.
+    \item \textbf{Coprocessor instructions:} Een coprocessor is een secundaire processor die aanwezig is op het moederbord en die de primaire processor ondersteunt bij zijn taken/instructies. De bijhorende instructies zijn bijgevolg allemaal verantwoordelijk voor het schrijven van en naar het werkgeheugen \autocite{ARM2022c}.
+    \item \textbf{Exception-generating instructions:} Deze categorie van instructies kan verder onderverdeeld worden in twee subsets. Deze omvatten de \textit{software interrupt instructions} die een software interrupt exception veroorzaken. Een andere groep zijn de \textit{software breakpoint instructions} die een \textit{abort instruction} veroorzaken. Wanneer er geschikte debug-software beschikbaar is op het \textit{abort vector} punt, dan kan er een \textit{abort exception} gegeneerd worden die als een \textit{breakpoint} kan worden beschouwd. Indien er debug-hardware aanwezig is in het systeem, kan deze de \textit{software breakpoint instructions} behandelen als een breakpoint, waardoor \textit{abort exceptions} vermeden kunnen worden \autocite{Seal2000}.
+\end{itemize}
+
+\subsection{De Thumb instruction set}
+De Thumb instructieset is een gehercodeerde subset van de meest gebruikte 32-bit ARM instructies. Thumb instructies hebben een lengte van 16 bit en ze stemmen overeen met 32-bit ARM instructies. Beide families van instructies hebben uiteraard hetzelfde effect op de processor. Thumb instructies werken met de standaard ARM register configuratie, waardoor er uitstekende interoperabiliteit tussen ARM en Thumb instructies mogelijk is. Bij de uitvoering van de software worden 16-bit Thumb instructies in real time gedecomprimeerd tot volledige 32-bit ARM instructies en dit zonder verlies van performantie. De Thumb instructieset biedt vele voordelen waaronder een groot aantal \textit{branch ranges}, krachtige rekenkundige bewerkingen en een grote adresruimte. Thumb-code is 35\% kleiner en heeft 160\% meer performantie vergeleken met equivalente ARM-code wanneer het wordt uitgevoerd op een 16-bit geheugensysteem. De beschikbaarheid van zowel de 16-bit Thumb- als de 32-bit ARM instructieset geeft software ontwerpers de flexibiliteit om de nadruk te leggen op prestaties of codegrootte, afhankelijk van de eisen en noden van hun toepassingen \autocite{armDeveloper2004}.
+
+\subsection{Een kijkje in de werking van een systeem gebaseerd op een ARM SoC}
+
+\begin{figure}[!htb]
+    \centering
+    \includegraphics[width=\linewidth]{img/ARMCPUarchitecture.jpg}
+    \caption{Een systematisch overzicht van een ARM processor \autocite{Shaw2013}}
+\end{figure}
+
+Het concept van een \textit{System-on-a-Chip} (SoC) beschrijft een complexe geïntegreerde schakeling, bestaande uit allerhande elektronische componenten zoals processorkernen, werkgeheugen, hardware logica, randapparatuur en andere elementen die onderling verbonden zijn door communicatiesystemen zoals interne databussen of netwerken \autocite{MathWorks2022}. Een SoC hoeft niet noodzakelijk gebruik te maken van ARM processoren, maar de meeste SoC’s die beschikbaar zijn op de markt doen dit wel. Een uitzondering op die regel is de Intel Atom x86 processorfamilie.
+
+Een typische SoC maakt gebruik van een hele resem aan componenten, waarvan slechts enkele gebruik maken van het intellectuele eigendom van ARM Ltd. De ARM processor die de dag van vandaag bestaat uit een meervoud aan kernen is diep ingebed in het toestel en is bijgevolg niet zichtbaar met het blote oog. De debug poort vormt de enige manier van directe toegang tot de processorkern(en) en wordt gebruikt bij het ontwerp, ontwikkeling, configuratie en debuggen van software. Er wordt algemeen aangenomen dat een debug-poort niet noodzakelijk is voor eindgebruikers. Daardoor wordt hij vaak verborgen of uitgeschakeld in eindproducten omdat deze poort vaak wordt misbruikt door hackers. De klok, zoals de naam al doet vermoeden, is verantwoordelijk voor het vastleggen van de kloksnelheid van een processor aan de hand van een constante stroom van impulsen \autocite{Shaw2013}. 
+
+Alle componenten op een ARM SoC geïntegreerde schakeling zijn met elkaar verbonden door middel van een \textit{on chip interconnect bus}. Een bus is verantwoordelijk voor het transporteren van elektrische signalen door middel van een gemeenschappelijk transportmedium. De grote meerderheid van toestellen die gebruik maken van een ARM SoC doen dit via de ARM \textit{Advanced Microcontroller Bus Architecture} (AMBA) interface. Deze bestaat uit twee varianten die elk op hun beurt gespecialiseerd zijn in verschillende interacties. De AMBA AXI is de bus die zorgt voor interconnectie tussen onderdelen die een hoge doorvoersnelheid hebben zoals tussen de processor en het werkgeheugen. De AMBA APB is op zijn beurt verantwoordelijk voor het regelen van de gegevensstroom tussen de processor en randapparatuur. Dit gezegd zijnde, moet er opgemerkt worden dat de AMBA APB uitsluitend wordt gebruikt voor interne doeleinden. Verder hebben de meeste toestellen ook een zekere hoeveelheid werkgeheugen op de chip, evenals interfaces die leiden naar externe opslagmedia \autocite{Shaw2013}.
+
+De hierboven vermelde componenten vormen slechts een introductie tot de elementen die men kan terugvinden op een \textit{System-on-a-Chip}. In de onderstaande figuur \ref{M1family} is er een gedetailleerde microscopische weergave terug te vinden van de processorarchitectuur van een \textit{Apple Silicon M1 processor}. Deze afbeelding laat de complexiteit van een moderne desktop ARM processor zien op een gestructureerde manier.
+
+\begin{figure}[!htb]
+    \centering
+    \includegraphics[width=\linewidth]{img/M1architecture.jpg}
+    \caption{Een microscopische weergave van een M1 Apple Silicon processor \autocite{Frumusanu2020}}
+    \label{M1family}
+\end{figure}
+
+\section{Verschillen tussen de ARM en x86 architectuur}
+\lipsum[21-25]
+
+\section{Prestatie per watt van ARM processoren}
+\lipsum[21-25]
+
+\section{Marktonderzoek: het aanbod van ARM computers in 2022}
+In de vorige hoofdstukken werd de architectuur van ARM processoren onderzocht alsook de voor- en nadelen die gepaard gaan bij het gebruik van deze architectuur. Deze sectie doet dienst als een marktonderzoek waarin wordt onderzocht welke laptop en desktop computers er beschikbaar zijn met ARM processoren. De categorie van de \textit{single-board} computers zal ook bestudeerd worden aangezien deze de laatste jaren spectaculair is toegenomen in populariteit omwille van hobbyisten en talrijke industriële toepassingen.
+
+\subsection{Windows on ARM}
+Microsoft speelt al sinds 2012 met het idee om energiezuinige ARM processoren te gebruiken in laptop-tablet hybride toestellen. Het besturingssysteem dat toen werd ontwikkeld was Windows RT. Deze eerste generatie van Windows ARM toestellen werd niet goed ontvangen door consumenten omwille van de geringe hoeveelheid aan programma's die beschikbaar waren op het 32-bit platform. Omwille van die desinteresse van software ontwikkelaars en consumenten stierf het platform een stille dood in 2016. Alhoewel Windows RT en de bijbehorende Microsoft Surface RT de geschiedenis zijn ingegaan als een commerciële flop, leerde het Microsoft en de software community een belangrijke les. Gebruiksvriendelijkheid en de beschikbaarheid van de meest gebruikte software is vitaal voor de levensvatbaarheid van een besturingssysteem \autocite{Triggs2022}. 
+
+Het Windows 10 on ARM desktop besturingssysteem, dat kan beschouwd worden als de opvolger van Windows RT, maakte zijn introductie in 2017. Met die introductie kwam een samenwerkingsverband tot stand tussen Microsoft en Qualcomm. Qualcomm is gekend voor het ontwikkelen van de bekende Snapdragon ARM processoren die gebruikt worden in Android smartphones en tablets. Elke partner is verantwoordelijk voor het naar voren brengen van een concurrentievoordeel. Het doel van Microsoft is om een 64-bit desktop besturingssysteem te ontwikkelen die innovatief doch herkenbaar is voor consumenten. Zoals eerder besproken, is software ondersteuning op een desktop platform even essentieel als de technologie die achter het platform steekt. Qualcomm is verantwoordelijk voor het ontwikkelen van de 8cx SoC’s die uitsluitend gericht zijn op het laptop segment van de markt. De introductie van Windows 11 on ARM maakt het mogelijk voor gebruikers om x86 software te emuleren. Dit houdt in dat bestaande x86 programma’s uitvoerbaar zijn op dit nieuwe platform. Deze aanpak gaat echter wel gepaard met een aantal problemen in de vorm van een geringe hoeveelheid prestatieverlies en een aantal stabiliteitsproblemen \autocite{Carrasqueira2022}.
+
+\begin{figure}[!htb]
+    \centering
+    \includegraphics[width=\linewidth]{img/gsmarena_001.jpg}
+    \caption{Een overzicht van de Snapdragon 8cx Gen 3 processor \autocite{Peter2021}}
+\end{figure}
+
+Laptops die berusten op het Windows on ARM besturingssysteem delen enkele belangrijke kenmerken zoals mobiliteit, toonaangevende batterijduur en connectiviteit. Door het gebruik van Snapdragon processoren hebben vele Windows on ARM laptops de mogelijkheid om verbinding te maken met mobiele 4G(LTE) of 5G netwerken. Deze eigenschap zorgt ervoor dat professionals die vaak moeten reizen of werken buiten de klassieke kantooromgeving, geïnteresseerd zijn in dit type toestellen. Samsung, Microsoft, Lenovo en Acer zijn de belangrijkste producenten van laptops die gebruikmaken van Snapdragon 8cx-processoren \autocite{Matte2022}.
+
+\subsection{Apple Silicon}
+Gedurende het jaarlijkse \textit{World Wide Developer Congress} (WWDC) dat plaatsvond op 22 juni 2020, kondigde Apple Inc. aan dat de Mac productlijn van desktops en laptops zou beginnen aan een twee jaar durende transitie van Intel x86 processoren naar ARM processoren. Deze reeks van SoC’s kreeg later de naam \textit{Apple Silicon}. De gevolgen van deze transitie zijn niet de minste. Elk toestel die Apple ontwerpt, gaande van de iPhone tot de Mac zal voortaan gebruikmaken van een processor die door het bedrijf zelf is ontworpen. De belangrijkste voordelen die een resultaat zijn van deze overgang zijn ongetwijfeld energie-efficiëntie, performantie en software compatibiliteit in het volledige gamma van toestellen \autocite{Liao2022}.
+
+Om ervoor te zorgen dat ontwikkelaars en software bedrijven klaar zijn voor deze overgang, heeft Apple een developer transition kit ontwikkeld. Dit is als het ware een desktop Mac die gebruik maakt van een A12Z Bionic SoC die ontworpen is voor de iPad. Deze transitie kit belicht een van de grootste nadelen die komt bij de transitie van Intel x86 processoren naar \textit{Apple Silicon}, zijnde dat software specifiek moet ontworpen worden voor dit nieuwe platform. Voor ontwikkelaars van applicaties die reeds op de markt zijn volstaat het om hun applicatie opnieuw te compileren op een apparaat die voorzien is van een Apple Silicon processor. Andere programma's zullen gebruik moeten maken van de \textit{Rosetta 2 translation layer}. Deze naam is gekozen naar analogie met de steen van Rosetta die dienst deed voor het vertalen van het hiërogliefenschrift. Een nadeel bij het gebruik van deze translation layer is dat software wordt uitgevoerd door het gebruik van virtualisatie. Dit houdt in dat de performantie van een applicatie die gebruik maakt van de \textit{Rosetta 2 translation layer}, lager zal zijn dan deze van een applicatie die ontworpen is voor de \textit{Apple Silicon} architectuur \autocite{Apple2020}.
+
+Op 8 maart 2022 werd de Mac Studio bekend gemaakt aan het grote publiek. De release van deze desktop Mac computer betekent het einde van de overgangsperiode van Intel x86 naar \textit{Apple Silicon}. De eerste generatie van \textit{Apple Silicon} processoren bestaat uit de M1, M1 Pro, M1 Max en de M1 Ultra. De snelheid waarmee deze nieuwe generatie aan processoren is ontworpen is te danken aan de schaalbaarheid van de ARM architectuur. Vanaf dit moment zullen alleen nog maar toestellen met \textit{Apple Silicon} ARM processoren uitgebracht en geproduceerd worden, waarmee de periode van ARM dominantie op het Mac desktop platform definitief is ingeluid \autocite{Apple2022}. 
+
+\begin{figure}[!htb]
+    \centering
+    \includegraphics[width=\linewidth]{img/Apple-M1-chip-family-lineup.jpg}
+    \caption{Een overzicht van de eerste generatie Apple Silicon processors \autocite{Apple2022}}
+\end{figure}
+
+\subsection{Single-board computers}
+Een \textit{single-board computer} kan gedefinieerd worden als een printplaat die alle componenten bevat die nodig zijn voor een werkende computer. Dit zijn de centrale verwerkingseenheid (cve), werkgeheugen, opslag, input/output (I/O) en verbindingsmogelijkheden zoals Ethernet \autocite{Pcmag2022}. Deze toestellen staan bekend voor hun kleine oppervlakte en kostprijs. Dit verklaart de populariteit van het gebruik van deze toestellen in de onderwijsmarkt en bij private hobbyprojecten. Een andere markt waar deze toestellen in populariteit winnen is deze van de industriële toepassingen.
+
+\subsubsection{Raspberry Pi}
+De reden achter de creatie van de Raspberry Pi is eenvoudig doch fascinerend. Deze categorie van single-board computers werd ontwikkeld om kinderen en jongeren te inspireren om te kiezen voor een carrière in de computerwetenschappen of om ze in ieder geval te interesseren in de werking van computers en software \autocite{Severance2013}. Dit verklaart het simpele bouwproces, de lage kost en de robuustheid van deze toestellen die vaak voor minder dan 100 euro verkrijgbaar zijn. 
+
+De meest recente toevoegingen aan de familie van Raspberry Pi single-board computers zijn de Pi 4 die wordt geleverd in de standaard behuizing en de onderwijs vriendelijke Pi 400 die wordt geleverd in de vorm van een toetsenbord. Beide toestellen maken gebruik van de quad-core ARM Cortex-A72 \autocite{Pi2022}. Dit is een 64-bit processor die gebruik maakt van de Armv8-A architectuur \autocite{armDeveloper2022}.
+
+\begin{figure}[!htb]
+    \centering
+    \includegraphics[width=\linewidth]{img/Cortex-A72.jpg}
+    \caption{Een systematische weergave van de ARM CORTEX-A72 \autocite{armDeveloper2022}}
+\end{figure}
+
+\subsubsection{Arduino}
+De Arduino is een microcontroller die net zoals de Raspberry Pi single-board computer, gebruik maakt van ARM processoren. Het grootste verschil tussen de twee toestellen is dat de Arduino geen mogelijk heeft om videosignalen weer te geven. Dit toestel is in tegenstelling tot de Raspberry Pi uitsluitend gefocust op het automatiseren van processen en het heeft bijgevolg geen besturingssysteem. Deze focus op automatisering leidt ertoe dat het apparaat klein en goedkoop is, zelfs in vergelijking met de Raspberry Pi. Sommige Arduino toestellen zijn reeds verkrijgbaar voor een kostprijs van een tiental euro \autocite{Arduino2018}. 
+
+\subsubsection{Programmable logic controller}
+Een \textit{programmable logic controller} (PLC) is een toestel die gebruikt wordt voor het monitoren, loggen en sturen van industriële machines en processen. Deze toestellen zijn de dag van vandaag uiteraard onmisbaar in een wereld waar automatisatie en industrie hand in hand gaan. Eerste generaties van PLC’s werden uitsluitend gebruikt voor het monitoren van sensoren of het aansturen van actuatoren, maar tegenwoordig worden deze toestellen gebruikt voor allerhande toepassingen. Hoewel deze toestellen vroeger vaak gebruik maakten van gepatenteerde besturingssystemen, maken ze de dag van vandaag gebruik van open source Linux of Unix besturingssystemen. Deze toestellen zijn tegenwoordig integraal in het concept van \textit{edge computing} die datacenters en gegevensbronnen dichter bij elkaar brengt \autocite{DeCraeke2022}. Een voorbeeld van dit type toestel is de Wago Edge Controller. Dit type PLC maakt gebruik van de ARM Cortex A9 processor \autocite{Wago2022}.

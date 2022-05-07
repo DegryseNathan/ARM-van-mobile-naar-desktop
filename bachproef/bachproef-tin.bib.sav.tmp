@@ -1,0 +1,244 @@
+@Article{Malone1998,
+  author = {Michael S. Malone},
+  date   = {1998},
+  title  = {Student Handout: Miracle of the Microprocessor},
+}
+
+@Article{Aspray1997,
+  author  = {William Aspray},
+  title   = {The Intel 4004 microprocessor: what constituted invention?},
+  doi     = {10.1109/85.601727},
+  number  = {3},
+  pages   = {4-15},
+  volume  = {19},
+  journal = {IEEE Annals of the History of Computing},
+  year    = {1997},
+}
+
+@Online{King2022,
+  author = {Ian King},
+  date   = {2022-02-09},
+  editor = {Bloomberg},
+  title  = {Intel Loses Market Share in ServerChips But Makes Gains in PCs},
+  url    = {https://www.bloomberg.com/news/articles/2022-02-09/intel-loses-market-share-in-server-chips-but-makes-gains-in-pcs},
+}
+
+@Online{Ahammed2017,
+  author = {Hariprasad. Jaseem Ahammed},
+  date   = {2017-08-05},
+  editor = {electronicsforu.com},
+  title  = {Introduction to ARM processor},
+  url    = {https://www.electronicsforu.com/technology-trends/learn-electronics/introduction-arm-processor},
+}
+
+@Online{Walshe2015,
+  author = {Ben Walshe},
+  date   = {2015-04-21},
+  editor = {arm Community},
+  title  = {A Brief History of Arm: Part 1},
+  url    = {https://community.arm.com/arm-community-blogs/b/architectures-and-processors-blog/posts/a-brief-history-of-arm-part-1#:~:text=Arm is founded&text=The Arm logo used until,and VLSI Technology.},
+}
+
+@Online{Walshe2015a,
+  author = {Ben Walshe},
+  date   = {2015-05-06},
+  editor = {arm Community},
+  title  = {A Brief History of Arm: Part 2},
+  url    = {https://community.arm.com/arm-community-blogs/b/architectures-and-processors-blog/posts/a-brief-history-of-arm-part-2},
+}
+
+@Online{Fulton2020,
+  author = {Scott Fulton},
+  date   = {2020-03-30},
+  editor = {ZDNet},
+  title  = {Arm processors: Everything you need to know now},
+  url    = {https://www.zdnet.com/article/arm-processors-everything-you-need-to-know-now/},
+}
+
+@Online{Dowd2022,
+  author = {Kevin Dowd},
+  date   = {2022-02-08},
+  editor = {Forbes},
+  title  = {Nvidia’s Arm Acquisition Is TheLatest Chip Mega-Deal ToCrumble},
+  url    = {https://www.forbes.com/sites/kevindowd/2022/02/08/nvidias-arm-acquisition-is-the-latest-chip-mega-deal-to-crumble/?sh=36e8e631687c},
+}
+
+@Thesis{DeCraeke2022,
+  author      = {Bram De Craeke},
+  date        = {2022},
+  institution = {Universiteit Gent},
+  title       = {Internet of things (IoT): theoretisch onderzoek en praktische realisatie met koppeling aan bovenliggend (cloud) platform},
+  type        = {mathesis},
+}
+
+@Online{Pcmag2022,
+  date   = {2022},
+  editor = {Pcmag},
+  title  = {Single board computer},
+  url    = {https://www.pcmag.com/encyclopedia/term/single-board-computer},
+}
+
+@Article{Severance2013,
+  author  = {Severance, Charles},
+  title   = {Eben Upton: Raspberry Pi},
+  doi     = {10.1109/MC.2013.349},
+  number  = {10},
+  pages   = {14-16},
+  volume  = {46},
+  journal = {Computer},
+  year    = {2013},
+}
+
+@Online{Pi2022,
+  date   = {2022},
+  editor = {Raspberry Pi},
+  title  = {Products},
+  url    = {https://www.raspberrypi.com/products/},
+}
+
+@Online{armDeveloper2022,
+  date   = {2022},
+  editor = {arm Developer},
+  title  = {Cortex-A72},
+  url    = {https://developer.arm.com/Processors/Cortex-A72},
+}
+
+@Online{Arduino2018,
+  date   = {2018},
+  editor = {Arduino},
+  title  = {What is ARduino?},
+  url    = {https://www.arduino.cc/en/Guide/Introduction},
+}
+
+@Online{Wago2022,
+  date   = {2022},
+  editor = {Wago},
+  title  = {Edge Controller},
+  url    = {https://www.wago.com/global/plcs-–-controllers/edge-controller/p/752-8303_8000-002},
+}
+
+@Online{Triggs2022,
+  author = {Robert Triggs},
+  date   = {2022-02-12},
+  editor = {Android Authority},
+  title  = {What is Windows on Arm? Everything you need to know},
+  url    = {https://www.androidauthority.com/windows-on-arm-explained-3100713/},
+}
+
+@Online{Carrasqueira2022,
+  author = {Joao Carrasqueira},
+  date   = {2022-01-19},
+  editor = {XDA-developers},
+  title  = {These are the best Windows on ARM laptops you can buy},
+  url    = {https://www.xda-developers.com/best-windows-on-arm/},
+}
+
+@Online{Matte2022,
+  author = {Daniel Matte},
+  date   = {2022-02-14},
+  editor = {arm Community},
+  title  = {Top 5 reasons to switch to Windows on Arm laptops},
+  url    = {https://community.arm.com/arm-community-blogs/b/architectures-and-processors-blog/posts/5-reasons-to-buy-windows-on-arm-laptops},
+}
+
+@InProceedings{Liao2022,
+  author    = {Xiaokai Liao and Bairong Li and Jionghui Li},
+  booktitle = {Proceedings of the 2022 7th International Conference on Financial Innovation and Economic Development (ICFIED 2022)},
+  title     = {Impacts of Apple’s M1 SoC on the Technology Industry},
+  doi       = {https://doi.org/10.2991/aebmr.k.220307.056},
+  isbn      = {978-94-6239-554-1},
+  pages     = {355-360},
+  publisher = {Atlantis Press},
+  url       = {https://doi.org/10.2991/aebmr.k.220307.056},
+  issn      = {2352-5428},
+  year      = {2022},
+}
+
+@Online{Apple2020,
+  date   = {2020-06-22},
+  editor = {Apple},
+  title  = {Apple announces Mactransition to Apple silicon},
+  url    = {https://www.apple.com/newsroom/2020/06/apple-announces-mac-transition-to-apple-silicon/},
+}
+
+@Online{Apple2022,
+  date   = {2022-03-08},
+  editor = {Apple},
+  title  = {Apple unveils M1 Ultra, the world’s most powerful chip for a personal computer},
+  url    = {https://www.apple.com/newsroom/2022/03/apple-unveils-m1-ultra-the-worlds-most-powerful-chip-for-a-personal-computer/},
+}
+
+@Online{ARM2022,
+  date   = {2022},
+  editor = {ARM},
+  title  = {Glossary RISC},
+  url    = {https://www.arm.com/glossary/risc#:~:text=A Reduced Instruction Set Computer,typically found in other architectures.},
+}
+
+@Article{Postiff2000,
+  author = {Matthew Postiff and David Greene and Trevor Mudge},
+  date   = {2000},
+  title  = {The Need for Large Register Files in Integer Codes},
+  pages  = {28},
+  url    = {http://tnm.engin.umich.edu/wp-content/uploads/sites/353/2021/03/2000.10.The_Need_for_Large_register_files_in_Integer_codes.pdf},
+}
+
+@Book{Seal2000,
+  author    = {Seal, David},
+  title     = {ARM Architecture Reference Manual},
+  edition   = {2},
+  isbn      = {0201737191},
+  publisher = {Addison Wesley Longman Publishing},
+  abstract  = {From the Publisher:This is the authoritative reference guide to the ARM RISC architecture. Produced by the architects that are actively working on the ARM specification, the book contains detailed information about all versions of the ARM and Thumb instruction sets, the memory management and cache functions, as well as optimized code examples.},
+  address   = {USA},
+  year      = {2000},
+}
+
+@Book{ARM2022a,
+  author = {ARM},
+  date   = {2022},
+  title  = {Arm Architecture Reference Manual for A-profile architecture},
+  pages  = {11530},
+  url    = {https://developer.arm.com/documentation/ddi0487/latest},
+}
+
+@Online{ARM2022b,
+  date   = {2022},
+  editor = {ARM},
+  title  = {GLOSSARY INSTRUCTION SET ARCHITECTURE (ISA)},
+  url    = {https://www.arm.com/glossary/isa},
+}
+
+@Online{ARM2022c,
+  date   = {2022},
+  editor = {ARM},
+  title  = {Load and store instructions},
+  url    = {https://developer.arm.com/documentation/dvi0027/b/arm-architecture-v4t/load-and-store-instructions},
+}
+
+@Book{armDeveloper2004,
+  author = {arm Developer},
+  date   = {2004},
+  title  = {ARM7TDMI Technical Reference Manual},
+}
+
+@Online{WatElectronics2019,
+  date   = {2019-07-29},
+  editor = {WatElectronics.com},
+  title  = {An Introduction to ARM Architecture with Each Module’s Working Principle},
+  url    = {https://www.watelectronics.com/arm-processor-architecture-working/},
+}
+
+@Online{MathWorks2022,
+  date   = {2022},
+  editor = {MathWorks},
+  title  = {SoC Architecture},
+  url    = {https://nl.mathworks.com/discovery/soc-architecture.html},
+}
+
+@Online{Shaw2013,
+  author = {Chris Shaw},
+  date   = {2013-06-24},
+  editor = {ARM},
+  title  = {The ARM University Program, ARM Architecture Fundamentals},
+  url    = {https://www.youtube.com/watch?v=7LqPJGnBPMM&t=6

@@ -5,32 +5,38 @@
 \chapter{\IfLanguageName{dutch}{Inleiding}{Introduction}}
 \label{ch:inleiding}
 
-De inleiding moet de lezer net genoeg informatie verschaffen om het onderwerp te begrijpen en in te zien waarom de onderzoeksvraag de moeite waard is om te onderzoeken. In de inleiding ga je literatuurverwijzingen beperken, zodat de tekst vlot leesbaar blijft. Je kan de inleiding verder onderverdelen in secties als dit de tekst verduidelijkt. Zaken die aan bod kunnen komen in de inleiding~\autocite{Pollefliet2011}:
+Als men om zich heen kijkt is er één type apparaat die altijd aanwezig is. Het is terug te vinden in de broekzak, handtas of om de pols van miljarden mensen. De digitale elektronica zoals smartphones, computers en de overvloed aan \textit{Internet of Things} (IoT) apparaten die een steeds belangrijkere rol spelen in de huidige samenleving, hebben hun succes allemaal te danken aan de uitvinding van de microprocessor \autocite{Malone1998}. 
 
-\begin{itemize}
-  \item context, achtergrond
-  \item afbakenen van het onderwerp
-  \item verantwoording van het onderwerp, methodologie
-  \item probleemstelling
-  \item onderzoeksdoelstelling
-  \item onderzoeksvraag
-  \item \ldots
-\end{itemize}
+Over de exacte datum, locatie en uitvinder van de microprocessor is er veel debat en onenigheid. Toch wordt er aangenomen en aanvaard dat de Intel 4004 de eerste microprocessor was die men globaal kon verkrijgen \autocite{Aspray1997}. Het succes van die eerste x86 processor was het begin van een succesverhaal voor Intel die tot op de dag van vandaag een marktaandeel heeft van 83% van de desktop CPU-markt en 75% van de mobiele CPU-markt. X86 is echter niet de enige instructieset die wordt gebruikt in processoren. De markt van de ARM processoren is de afgelopen jaren in een stroomversnelling terechtgekomen door de interesse en innovaties van bedrijven zoals Nvidia, Qualcomm en Apple. Dit verklaart de verdrievoudiging van het marktaandeel van ARM processoren in het voorbije jaar \autocite{King2022}.
+
+De geschiedenis van ARM start in 1983 in Groot-Brittannië wanneer het toenmalige Acorn Computers Ltd geïnspireerd werd door het Berkeley RISC project. De bedoeling van het Berkeley project was om een processor te ontwikkelen die gebruik maakte van de \textit{Reduced Instruction Set Computer} (RISC) architectuur die gelijkaardige performantie karakteristieken bezat als microprocessors die steunden op de \textit{Complex Instruction Set Computer} (CISC) architectuur. De \textit{ARM1} processor die het resultaat was van de Acorn Computers Ltd studie werd uitgebracht begin de jaren tachtig van de vorige eeuw \autocite{Ahammed2017}. Deze werd gebruikt in de BBC Micro computer die onderdeel was van een overheidsinitiatief waarvan het doel was om elk klaslokaal in Groot-Brittannië te voorzien van een computer. Gezien de ambitieuze omvang en aard van het project was het cruciaal dat de processor een simpel, energiezuinig en betrouwbaar design had. Deze eigenschappen staan nog steeds centraal bij het ontwikkelen van moderne ARM processoren \autocite{Walshe2015}.
+
+Het bedrijf die vandaag de dag nog steeds bestaat onder de naam ARM Ltd werd officieel opgericht in 1990 en opteerde ervoor om zijn naam te veranderen naar Advanced RISC Machines Ltd. Het bedrijf werd gestructureerd als een samenwerkingsverband tussen Acorn Computers Ltd, Apple Inc en VLSI Technology. Elke partner was verantwoordelijk voor het aanvoeren van een belangrijke troef. Apple Inc was verantwoordelijk voor het aanbrengen van kapitaal, VLSI Technology bracht de technologische expertise en Acorn Computers Ltd leverde ingenieurs \autocite{Walshe2015}.
+
+ARM is in tegenstelling tot zijn concurrenten Intel en Advanced Micro Devices (AMD) niet verantwoordelijk voor de productie van processoren. De focus van ARM is gericht op het verschaffen van de intellectuele eigendom en de instructieset aan haar partners. Met die informatie zijn deze partners in staat om processen te ontwikkelen of om de in licentie gegeven technologie te verbeteren naargelang de eigen wensen en noden. Deze partners zijn niet de minste. Technologiereuzen zoals Apple, Samsung en Qualcomm maken op hun beurt allemaal gebruik van aangekochte ARM licenties \autocite{Ahammed2017}.
+
+ARM processoren worden gebruikt in zowat elk type apparaat gaande van smartphones tot de modernste supercomputers. In het begin van de jaren 2000 bereikten microprocessoren een omvang die klein genoeg was om \textit{system-on-a-chip} systemen te ontwikkelen. Deze SoC’s werden de de-facto standaard processoren in de eerste generatie van smartphones. Net als de Intel Core of de AMD Ryzen familie van processoren, heeft ARM de Cortex reeks. Deze familie is opgesplitst in drie groepen, namelijk de A-reeks die zich focust op maximale performantie, de M-reeks die zich toespitst op minimaal energieverbruik en warmteproductie en de R-reeks die zorgt voor een evenwicht tussen de A- en M-reeks. In 2011 werd de baanbrekende \textit{big.LITTLE} architectuur geïntroduceerd. Zoals de naam al doet vermoeden wordt deze technologie gekenmerkt door twee verschillende soorten van CPU-cores, namelijk cores die gericht zijn op performantie en andere die gericht zijn op energiezuinigheid. Deze aanpak is inmiddels de standaard geworden bij zowat alle huidige smartphone processoren \autocite{Walshe2015a}. De twaalfde generatie van Intel Core CPU’s genaamd Alder Lake, maakt inmiddels ook gebruik van dit baanbrekende concept.
+
+De wereld van de ARM processoren zit niet stil, de afgelopen jaren zijn gevuld met innovatie en enkele opmerkelijke trends. Tijdens het \textit{World Wide Developer Congres} 2020 (WWDC) dat jaarlijks wordt georganiseerd door Apple, kondigde het bedrijf aan dat men van plan was over te stappen van Intel x86 processoren in hun desktop en laptop line-up naar ARM processoren die ze zelf zullen ontwikkelen. Het ontwerpen van processoren is echter niet onbekend voor Apple aangezien men sinds 2010 ARM CPU’s produceert voor de iPhone. Dit is trouwens niet de eerste keer dat Apple een overstap maakt van processorarchitectuur in hun Mac familie van computers. In 2005 kondigde Apple aan dat men van plan was om over te schakelen van het toenmalige IBM PowerPC platform naar Intel x86 processoren \autocite{Fulton2020}. 
+
+Een andere opmerkelijke ontwikkeling was de intentie van Nvidia, een producent van grafische kaarten, om te fuseren met ARM Ltd. Deze plannen zijn inmiddels van de kaart geveegd omdat de fusie van deze twee technologiereuzen voor veel vragen zorgde bij toezichthouders in de Verenigde Staten, het Verenigd Koninkrijk en de Europese Unie \autocite{Dowd2022}. 
+
+Met deze kennis in gedachten is het de bedoeling om te onderzoeken of het mogelijk is voor professionals en HoGent studenten om over te stappen naar een ARM toestel voor hun dagelijkse taken. Verder zal er ook een \textit{proof-of-concept} applicatie ontwikkeld worden gericht op de \textit{Apple Silicon} architectuur. Het voordeel van deze architectuur is dat applicaties die ontworpen zijn voor mobiele toestellen zoals de iPhone en iPad ook uitvoerbaar zijn op het Mac desktop platform.
 
 \section{\IfLanguageName{dutch}{Probleemstelling}{Problem Statement}}
 \label{sec:probleemstelling}
 
-Uit je probleemstelling moet duidelijk zijn dat je onderzoek een meerwaarde heeft voor een concrete doelgroep. De doelgroep moet goed gedefinieerd en afgelijnd zijn. Doelgroepen als ``bedrijven,'' ``KMO's,'' systeembeheerders, enz.~zijn nog te vaag. Als je een lijstje kan maken van de personen/organisaties die een meerwaarde zullen vinden in deze bachelorproef (dit is eigenlijk je steekproefkader), dan is dat een indicatie dat de doelgroep goed gedefinieerd is. Dit kan een enkel bedrijf zijn of zelfs één persoon (je co-promotor/opdrachtgever).
+ARM-laptops en -desktops zijn vandaag de dag nog steeds vrij zeldzaam. Echter met het huidige tempo van innovatie en de belangstelling die fabrikanten tonen voor het ARM-platform, worden ze snel populairder. Dit houdt in dat professionals en studenten snel in aanraking zullen komen met dit platform zonder enig besef te hebben van de voor- en nadelen van deze architectuur. 
 
 \section{\IfLanguageName{dutch}{Onderzoeksvraag}{Research question}}
 \label{sec:onderzoeksvraag}
 
-Wees zo concreet mogelijk bij het formuleren van je onderzoeksvraag. Een onderzoeksvraag is trouwens iets waar nog niemand op dit moment een antwoord heeft (voor zover je kan nagaan). Het opzoeken van bestaande informatie (bv. ``welke tools bestaan er voor deze toepassing?'') is dus geen onderzoeksvraag. Je kan de onderzoeksvraag verder specifiëren in deelvragen. Bv.~als je onderzoek gaat over performantiemetingen, dan 
+Is het mogelijk voor professionals en studenten om over te schakelen van de mature, goed ondersteunde en welbekende x86 architectuur naar een toestel die gebruik maakt van een ARM processor? 
 
 \section{\IfLanguageName{dutch}{Onderzoeksdoelstelling}{Research objective}}
 \label{sec:onderzoeksdoelstelling}
 
-Wat is het beoogde resultaat van je bachelorproef? Wat zijn de criteria voor succes? Beschrijf die zo concreet mogelijk. Gaat het bv. om een proof-of-concept, een prototype, een verslag met aanbevelingen, een vergelijkende studie, enz.
+Het hoofddoel van dit onderzoek is om inzicht te krijgen in de architectuur, kenmerken, gebruiksvriendelijkheid en maturiteit van ARM processoren. Deze onderzoeksdoelstelling zal onderzocht worden aan de hand van scenario’s en een \textit{proof-of-concept} applicatie die moet aantonen dat het mogelijk is voor professionals en studenten om gebruik te maken van een ARM toestel voor hun dagelijks taken. Dit onderzoek is dan ook geslaagd wanneer dit doel behaald wordt.
 
 \section{\IfLanguageName{dutch}{Opzet van deze bachelorproef}{Structure of this bachelor thesis}}
 \label{sec:opzet-bachelorproef}

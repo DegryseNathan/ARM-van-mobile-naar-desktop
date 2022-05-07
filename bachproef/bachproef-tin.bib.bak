@@ -186,9 +186,9 @@
 @Book{Seal2000,
   author    = {Seal, David},
   title     = {ARM Architecture Reference Manual},
-  edition   = {2nd},
+  edition   = {2},
   isbn      = {0201737191},
-  publisher = {Addison-Wesley Longman Publishing Co., Inc.},
+  publisher = {Addison Wesley Longman Publishing},
   abstract  = {From the Publisher:This is the authoritative reference guide to the ARM RISC architecture. Produced by the architects that are actively working on the ARM specification, the book contains detailed information about all versions of the ARM and Thumb instruction sets, the memory management and cache functions, as well as optimized code examples.},
   address   = {USA},
   year      = {2000},
@@ -220,6 +220,54 @@
   author = {arm Developer},
   date   = {2004},
   title  = {ARM7TDMI Technical Reference Manual},
+}
+
+@Online{WatElectronics2019,
+  date   = {2019-07-29},
+  editor = {WatElectronics.com},
+  title  = {An Introduction to ARM Architecture with Each Module’s Working Principle},
+  url    = {https://www.watelectronics.com/arm-processor-architecture-working/},
+}
+
+@Online{MathWorks2022,
+  date   = {2022},
+  editor = {MathWorks},
+  title  = {SoC Architecture},
+  url    = {https://nl.mathworks.com/discovery/soc-architecture.html},
+}
+
+@Online{Shaw2013,
+  author = {Chris Shaw},
+  date   = {2013-06-24},
+  editor = {ARM},
+  title  = {The ARM University Program, ARM Architecture Fundamentals},
+  url    = {https://www.youtube.com/watch?v=7LqPJGnBPMM&t=615s},
+}
+
+@Online{Frumusanu2020,
+  author = {Andrei Frumusanu},
+  date   = {2020-11-17},
+  editor = {AnandTech},
+  title  = {The 2020 Mac Mini Unleashed: Putting Apple Silicon M1 to the test},
+  url    = {https://www.anandtech.com/show/16252/mac-mini-apple-m1-tested},
+}
+
+@Online{Triggs2022a,
+  author = {Robert Triggs},
+  date   = {2022-04-24},
+  editor = {Android Authority},
+  title  = {Arm vs x86: Instruction sets, architecture, and all key differences explained},
+  url    = {https://www.androidauthority.com/arm-vs-x86-key-differences-explained-568718/},
+}
+
+@Book{SarahHarris2015,
+  author    = {Sarah Harris, David Money Harris},
+  date      = {2015-05-06},
+  title     = {Digital Design and Computer Architecture ARM Edition},
+  chapter   = {6 Architecture},
+  edition   = {1},
+  isbn      = {9780128000564},
+  publisher = {Morgan Kaufmann},
 }
 
 @Comment{jabref-meta: databaseType:biblatex;}
