@@ -421,14 +421,14 @@
 @Article{Supermicro2018,
   author = {Supermicro},
   date   = {2018-12},
-  title  = {Data Centers&The Environment},
+  title  = {Data Centers and The Environment},
 }
 
 @Online{Miller2022,
   author = {Austin Miller},
   date   = {2022-02-01},
   editor = {bmc},
-  title  = {How Data Center Cooling Works & Can Promote Sustainability},
+  title  = {How Data Center Cooling Works and Can Promote Sustainability},
   url    = {https://www.bmc.com/blogs/data-center-cooling/},
 }
 
