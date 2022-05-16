@@ -484,13 +484,6 @@
   url    = {https://developer.apple.com/swift/},
 }
 
-@Online{PCmag2022,
-  date   = {2022},
-  editor = {PCmag},
-  title  = {Native application},
-  url    = {https://www.pcmag.com/encyclopedia/term/native-application},
-}
-
 @Online{Developer2022a,
   date   = {2022},
   editor = {Apple Developer},
@@ -507,4 +500,9 @@
 
 @Online{AppleDeveloper2022c,
   date   = {2022},
-  
+  editor = {Apple Developer},
+  title  = {Navigation View},
+  url    = {https://developer.apple.com/documentation/swiftui/navigationview},
+}
+
+@Online{AppleDeveloper2021,
