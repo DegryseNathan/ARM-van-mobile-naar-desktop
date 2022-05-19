@@ -124,23 +124,24 @@ In de volgende secties zal er gesproken worden over de performantie van moderne 
 \subsubsection{M1}
 Sinds november 2020 maakt Apple gebruik van ARM processoren in hun Mac aanbod. De eerste desktop ARM chip die Apple heeft ontworpen is de M1, deze is gericht op het “goedkopere” segment van hun desktops en laptops dat tevens een focus heeft op mobiliteit. Deze toestellen zijn gericht op consumenten en studenten die niet noodzakelijk een nood hebben aan hoge prestaties. Dat gezegd zijnde is deze chip zeer indrukwekkend voor een eerste poging tot desktop ARM processoren. De M1 is uitgerust met acht processorkernen en verbruikt bij alledaags gebruik 7 watt. Bij maximale prestaties is de M1 in staat om 20 watt te verbruiken. Als men kijkt naar onderstaande figuur Cinebench R23 M1 dan is het duidelijk dat de M1 processor indrukwekkende prestaties levert. Een \textit{multi-threaded} score die 7833 bedraagt is op zich al behoorlijk indrukwekkend, maar zeker wanneer men deze in context plaatst met de vorige generatie aan Apple toestellen die u onderaan de grafiek kunt vinden. Het is voornamelijk de \textit{single-threaded} score die indrukwekkend is bij de M1. Deze is namelijk quasi gelijk aan de score van de AMD Ryzen 5950X. Dit is een processor die 105 watt verbruikt en dat men enkel kan terugvinden in hoogwaardige desktops \autocite{Frumusanu2020a}.
 
-\begin{figure}[!htb]
-    \centering
-    \includegraphics[width=\linewidth]{img/m1cinebenchr23.jpg}
-    \caption{Cinebench R23 M1 \autocite{Frumusanu2020a}}
-\end{figure}
-
 \subsubsection{M1 Pro}
+\raggedbottom
 De M1 Pro \textit{Apple Silicon} chip is voornamelijk ontwikkelt voor ICT'ers en professionals op het gebied van foto- en videografie. Het spreekt dus voor zich dat deze processor is ontworpen met performantie in gedachten. Dit kan ook beaamd worden door het toonaangevende resultaat in de Cinebench R23 \textit{multi-threaded} test. Dit resultaat wordt des te meer indrukwekkend wanneer men in gedachten houdt dat de M1 Pro 30 watt aan energie verbruikt bij maximale prestaties tegenover zijn naaste concurrent de Ryzen 9 5900HX die 45 watt verbruikt \autocite{Schiesser2021}.
 
-\begin{figure}[!htb]
-    \centering
-    \includegraphics[width=\linewidth]{img/m1procinebenchr23.jpg}
-    \caption{Cinebench R23 M1 Pro \autocite{Schiesser2021}}
-\end{figure}
-
 \subsection{Snapdragon 8cx}
+\raggedbottom
 De Snapdragon 8cx reeks van processoren is ontwikkeld door Qualcomm en is uitsluitend gericht op de markt van de Windows on ARM toestellen. Deze worden vrijwel allemaal gekenmerkt door een dun profiel, een focus op mobiliteit en indien mogelijk, passieve koeling. Dit houdt in dat de processor niet wordt gekoeld door een ventilator maar door een koelplaat die in staat is om warmte passief af te geven. Deze manier van koeling is enkel mogelijk bij processoren die een geringe hoeveel warmte uitstoten. De Snapdragon 8cx2 die beschikbaar is sinds 2020 verbruikt slechts 7 watt, desondanks deze uitstekende efficiëntie is hij toch in staat om te concurreren met sommige energiezuinige varianten van de Intel Core i5 \autocite{Qualcomm2020}. Deze geclaimde performantie dient echter gekaderd te worden. Wanneer men de performantie van de 8cx en de gelijkaardige SQ2 vergelijkt met deze van de \textit{Apple Silicon} M1 dan valt er op dat de Qualcomm chips niet in staat zijn om te concurreren. Sterker nog, de hierboven vermelde M1 chip levert zelfs betere performantie dan de Snapdragon chip onder gevirtualiseerde omstandigheden. Virtualisatie software heeft nochtans een aanzienlijke impact op performantie. Dit toont aan dat Qualcomm nog een heleboel werk heeft vooraleer het effectief in staat is om te concurreren met Apple, Intel en AMD \autocite{Wankhede2020}.
+
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[width=\linewidth]{img/m1cinebenchr23.jpg}
+	\caption{Cinebench R23 M1 \autocite{Frumusanu2020a}}
+\end{figure}
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[width=\linewidth]{img/m1procinebenchr23.jpg}
+	\caption{Cinebench R23 M1 Pro \autocite{Schiesser2021}}
+\end{figure}
 
 \subsection{Amazon graviton}
 \subsubsection{De ecologische impact van datacenters}
@@ -197,9 +198,9 @@ De reden achter de creatie van de Raspberry Pi is eenvoudig doch fascinerend. De
 
 De meest recente toevoegingen aan de familie van Raspberry Pi single-board computers zijn de Pi 4 die wordt geleverd in de standaard behuizing en de onderwijs vriendelijke Pi 400 die wordt geleverd in de vorm van een toetsenbord. Beide toestellen maken gebruik van de quad-core ARM Cortex-A72 \autocite{Pi2022}. Dit is een 64-bit processor die gebruik maakt van de Armv8-A architectuur \autocite{armDeveloper2022}.
 
-\begin{figure}[!htb]
+\begin{figure}[!h]
     \centering
-    \includegraphics[width=\linewidth]{img/Cortex-A72.jpg}
+    \includegraphics[width=70mm, scale=0.5]{img/Cortex-A72.jpg}
     \caption{Een systematische weergave van de ARM CORTEX-A72 \autocite{armDeveloper2022}}
 \end{figure}
 
@@ -208,3 +209,9 @@ De Arduino is een microcontroller die net zoals de Raspberry Pi single-board com
 
 \subsubsection{Programmable logic controller}
 Een \textit{programmable logic controller} (PLC) is een toestel die gebruikt wordt voor het monitoren, loggen en sturen van industriële machines en processen. Deze toestellen zijn de dag van vandaag uiteraard onmisbaar in een wereld waar automatisatie en industrie hand in hand gaan. Eerste generaties van PLC’s werden uitsluitend gebruikt voor het monitoren van sensoren of het aansturen van actuatoren, maar tegenwoordig worden deze toestellen gebruikt voor allerhande toepassingen. Hoewel deze toestellen vroeger vaak gebruik maakten van gepatenteerde besturingssystemen, maken ze de dag van vandaag gebruik van open source Linux of Unix besturingssystemen. Deze toestellen zijn tegenwoordig integraal in het concept van \textit{edge computing} die datacenters en gegevensbronnen dichter bij elkaar brengt \autocite{DeCraeke2022}. Een voorbeeld van dit type toestel is de Wago Edge Controller. Dit type PLC maakt gebruik van de ARM Cortex A9 processor \autocite{Wago2022}.
+
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=90mm, scale=0.5]{img/wago_edge_controller.jpg}
+	\caption{Een Wago PLC Edge Controller \autocite{Wago2022}}
+\end{figure}

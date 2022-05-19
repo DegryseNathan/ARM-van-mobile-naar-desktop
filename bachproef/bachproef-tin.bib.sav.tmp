@@ -506,3 +506,20 @@
 }
 
 @Online{AppleDeveloper2021,
+  date   = {2021-06-03},
+  editor = {Apple Developer},
+  title  = {Running Your App in the Simulator or on a Device},
+  url    = {https://developer.apple.com/documentation/xcode/running-your-app-in-the-simulator-or-on-a-device},
+}
+
+@Online{Khan2021,
+  author = {Aasif Khan},
+  date   = {2021-12-03},
+  editor = {appypie},
+  title  = {Struct vs. Class in Swift Explained},
+  url    = {https://www.appypie.com/struct-vs-class-swift-how-to},
+}
+
+@Online{Gillis2022,
+  author = {Alexander S. Gillis},
+  date   = {
