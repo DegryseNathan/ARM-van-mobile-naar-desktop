@@ -559,7 +559,7 @@
 
 @Online{ChromiumProject2009,
   date   = {2009-11-03},
-  editor = {The Chromium Projects},
+  editor = {Chromium},
   title  = {Chromium},
   url    = {https://www.chromium.org/Home/},
 }
@@ -584,6 +584,128 @@
   date   = {2022},
   title  = {Choose which Firefox Browser to download in your language},
   url    = {https://www.mozilla.org/en-US/firefox/all/#product-desktop-release},
+}
+
+@Online{StackOverflow2020,
+  date   = {2020},
+  editor = {Stack Overflow},
+  title  = {2020 Developer Survey},
+  url    = {https://insights.stackoverflow.com/survey/2020#technology-most-loved-dreaded-and-wanted-languages-loved},
+}
+
+@Online{Banerjee2022,
+  author = {Pinaki Banerjee},
+  date   = {2022-01-05},
+  editor = {Geeks for Geeks},
+  title  = {Top 5 Free and Open-Source Version Control Tools in 2020},
+  url    = {https://www.geeksforgeeks.org/top-5-free-and-open-source-version-control-tools-in-2020/},
+}
+
+@Online{Fromaget2021,
+  author = {Patrick Fromaget},
+  date   = {2021-06-02},
+  title  = {How to Use Geany on Raspberry Pi?},
+  url    = {https://raspberrytips.com/use-geany-on-raspberry-pi/},
+}
+
+@Article{Mandelbrot1980,
+  author  = {Mandelbrot, Benoit B.},
+  title   = {FRACTAL ASPECTS OF THE ITERATION},
+  doi     = {https://doi.org/10.1111/j.1749-6632.1980.tb29690.x},
+  eprint  = {https://nyaspubs.onlinelibrary.wiley.com/doi/pdf/10.1111/j.1749-6632.1980.tb29690.x},
+  number  = {1},
+  pages   = {249-259},
+  url     = {https://nyaspubs.onlinelibrary.wiley.com/doi/abs/10.1111/j.1749-6632.1980.tb29690.x},
+  volume  = {357},
+  journal = {Annals of the New York Academy of Sciences},
+  year    = {1980},
+}
+
+@Online{EclipseFoundation2022,
+  date   = {2022},
+  editor = {Eclipse Foundation},
+  title  = {Eclipse IDE 2022-03 R Packages},
+  url    = {https://www.eclipse.org/downloads/packages/},
+}
+
+@Online{Borges2020,
+  author = {Bruno Borges},
+  date   = {2020-06-24},
+  editor = {Microsoft Devblogs},
+  title  = {Announcing OpenJDK for Windows 10 on ARM},
+  url    = {https://devblogs.microsoft.com/java/announcing-openjdk-windows-arm/},
+}
+
+@Online{VMware2016,
+  date   = {2016-07-30},
+  editor = {VMware},
+  title  = {What is Virtualization?},
+  url    = {https://www.vmware.com/be/solutions/virtualization.html},
+}
+
+@Online{VirtualBox2003,
+  date   = {2003-09-23},
+  editor = {VirtualBox},
+  title  = {Welcome to VirtualBox.org},
+  url    = {https://www.virtualbox.org},
+}
+
+@Online{Parallels2009,
+  date   = {2009-02-19},
+  editor = {Parallels},
+  title  = {Parallels Desktop: Run Windows on Mac},
+  url    = {https://www.parallels.com/eu/},
+}
+
+@Online{Vogel2021,
+  author = {Beatrice Vogel},
+  date   = {2021-04-14},
+  editor = {Parallels},
+  title  = {Parallels Desktop 16.5 for Mac Supports Both M1 and Intel Chips},
+  url    = {https://www.parallels.com/blogs/parallels-desktop-m1/},
+}
+
+@Online{Microsoft2021,
+  date   = {2021-12-29},
+  editor = {Microsoft},
+  title  = {What is the Windows Subsystem for Linux?},
+  url    = {https://docs.microsoft.com/en-us/windows/wsl/about},
+}
+
+@Online{Docker2020,
+  date   = {2020-04-08},
+  editor = {Docker},
+  title  = {Docker overview},
+  url    = {https://docs.docker.com/get-started/overview/},
+}
+
+@Online{Andrews2019,
+  author = {Jason Andrews},
+  date   = {2019-04-30},
+  editor = {arm Community},
+  title  = {Getting started with Docker on Arm},
+  url    = {https://community.arm.com/arm-community-blogs/b/tools-software-ides-blog/posts/getting-started-with-docker-on-arm},
+}
+
+@Online{Docker2021,
+  date   = {2021-08-16},
+  editor = {Docker},
+  title  = {Docker Desktop WSL 2 backend},
+  url    = {https://docs.docker.com/desktop/windows/wsl/},
+}
+
+@Online{Maurer2020,
+  author = {Thomas Maurer},
+  date   = {2020-06-15},
+  title  = {Run Hyper-V on Windows 10 on ARM and the Surface Pro X},
+  url    = {https://www.thomasmaurer.ch/2020/06/run-hyper-v-on-windows-10-on-arm-and-the-surface-pro-x/},
+}
+
+@Online{Woodfine2020,
+  author = {Gary Woodfine},
+  date   = {2020-09-05},
+  title  = {What is a terminal window},
+  url    = {https://geekiam.io/what-is-a-terminal-window/},
 }
 
 @Comment{jabref-meta: databaseType:biblatex;}

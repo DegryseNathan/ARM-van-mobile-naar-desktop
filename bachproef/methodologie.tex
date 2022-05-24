@@ -99,9 +99,114 @@ Op het gebied van browserondersteuning stelt het Windows on ARM platform enigszi
 	\caption{Mozilla Firefox op het Windows on ARM platform \autocite{Mozilla2022}}
 \end{figure}
 
-\pagebreak
 \section{Scenario 2: professioneel IT-gebruik}
-\lipsum[1-4]
+In dit tweede scenario komen de programma’s aan bod die deel uitmaken van het softwarepakket van een programmeur of een student toegepaste informatica of aanverwante opleiding. De programmeertalen die getest zullen worden in dit onderzoek zijn gekozen op basis van de populariteitsindex van de jaarlijkse \textit{Stack Overflow Developer Survey} en het feit of ze al dan niet aan bod komen in een opleidingsonderdeel van de professionele bachelor toegepaste informatica.
+
+Python bevindt zich al enkele jaren in de top 10 van de meest geliefde en gebruikte programmeertalen en deze wordt eveneens gebruikt in de opleiding bij het opleidingsonderdeel \textit{Classical Computer Science Algorithms}. Verder zal de compatibiliteit van de Java programmeertaal ook onderzocht worden aangezien deze nog steeds populair is bij zowel softwarebedrijven en onderwijsinstellingen \autocite{StackOverflow2020}. Naast software ontwikkeling zullen ook versiebeheer, virtualisatie, containervirtualisatie en de computerterminal op de proef gesteld worden. Deze testopstellingen zullen moeten uitwijzen of de gebruikerservaring en de software ondersteuning op ARM besturingssystemen gelijkwaardig zijn aan deze op populaire en vertrouwde x86 besturingssystemen.
+
+\subsection{Versiebeheer met Git}
+Als informaticus is het quasi onmogelijk om werk gedaan te krijgen of samen te werken met collega’s zonder het gebruik van een versiebeheersysteem. Git is veruit de meest gebruikte en aanvaarde standaard als het komt op het gebied van versiebeheer, vandaar dat dit onderzoek zich hierop zal richten \autocite{Banerjee2022}.
+
+Raspberry Pi- en macOS maken het de gebruiker gemakkelijk aangezien deze twee besturingssystemen standaard Git functionaliteit hebben ingebouwd terwijl dit op het Windows on ARM platform dient geïnstalleerd te worden door de eindgebruiker. De Git \textit{client} is echter niet \textit{native} gecompileerd voor het Windows on ARM platform. Om het gebrek aan \textit{native} software te verhelpen, voorziet Windows on ARM emulatie van sommige x86 programma’s. Het is echter belangrijk om op te merken dat deze aanpak niet altijd werkt. 
+
+Alle bovengenoemde platformen voeren de grafische en console variant van de Git \textit{client} uit zonder enige vorm van problemen en de gebruikerservaring is niet te onderscheiden van deze op x86 platformen.
+
+\subsection{Programmeren in Python}
+De Python programmeertaal is sinds zijn ontstaan geliefd bij zowel professionele ontwikkelaars en studenten omwille van de beginnersvriendelijke syntaxis en de geringe hoeveelheid aan performantie die een computer nodig heeft om met deze programmeertaal te werken \autocite{StackOverflow2020}. Dit betekent echter niet dat een ontwikkelaar niet in staat is om complexe algoritmes to coderen in Python. Om te onderzoeken of een ontwikkelaar of een student een ARM computer kan gebruiken om in Python te programmeren, zal deze sectie de beschikbaarheid van de programmeertaal, de beschikbaarheid van een geschikte \textit{integrated development environment} (IDE) en de prestaties van een veeleisende Python benchmark evalueren.
+
+De Python programmeertaal is een softwarepakket dat standaard geïnstalleerd is op de meeste Linuxdistributies. Dit is ook het geval bij het op ARM gebaseerde Raspberry Pi OS waar zowel versie 2 als 3 beschikbaar zijn voor de gebruiker. Verder stelt Raspberry Pi OS enkele eenvoudige Python IDE’s ter beschikking als onderdeel van de voorgeïnstalleerde software. Deze komen in de vorm van Geany en Thonny, dit zijn beide Python programmeeromgevingen die gericht zijn op de markt van beginnende programmeurs of kinderen en tieners die hun eerste lijnen code willen schrijven \autocite{Fromaget2021}. Verder kan een gebruiker de populaire Visual Studio Code broncode-editor downloaden via het \textit{Advanced Package Tool} (APT) pakketbeheerprogramma die terug te vinden is op alle Linuxdistributies die gebaseerd zijn op Debian.
+
+Windows 11 on ARM biedt eveneens een uitstekende gebruikerservaring aan op het gebied van de installatie van de Python software en de Visual Studio Code editor. Deze zijn immers allebei terug te vinden in de Microsoft Store. Python programmeurs op het macOS besturingssysteem dienen Python en VS Code te downloaden via een browser naar keuze of de Homebrew \textit{package manager}.
+
+Om de prestaties van de drie verschillende ARM systemen te evalueren, is op alle toestellen een veeleisende Python \textit{benchmark} uitgevoerd. Deze komt in de vorm van het Mandelbrot algoritme die gebaseerd is op de wiskundige verzameling genaamd naar de Pools-Franse wiskundige Benoit Mandelbrot. De Mandelbrot \textit{benchmark} genereert fractalen, dit zijn zelfgelijkende meetkundige figuren. Fractalen zijn als het ware complexe wiskundige figuren die zijn opgebouwd uit figuren die deels gelijkvormig zijn met de figuur zelf. Het praktisch nut van wiskundige fractalen wordt gebruikt in de chaostheorie, een wiskundige discipline die zich focust op de studie van het gedrag van niet-lineaire dynamische systemen \autocite{Mandelbrot1980}.
+
+Het algoritme dat wordt gebruikt om Mandelbrot fractalen te berekenen en genereren stelt de mogelijkheden van processoren zwaar op de proef. In de onderstaande afbeelding is de uitvoer en de uitvoeringstijd van het Mandelbrot algoritme te zien met een stapgrootte van 16000 fractalen. Dit houdt in dat het algoritme 16000 fractalen moet berekenen en genereren. Het spreekt voor zich dat de \textit{Apple Silicon} M1 de kortste uitvoeringstijd heeft aangezien deze processor een hogere kloksnelheid heeft en meer processorkernen bezit dan de andere toestellen in deze studie. De gevirtualiseerde Windows on ARM machine komt op de tweede plaats met een uitvoeringstijd die vier keer langer is. Het is echter belangrijk om te kaderen dat deze virtuele machine slechts de helft van de processorkernen bezit waartoe het host M1 toestel toegang tot heeft. De uitvoeringstijd van het Mandelbrot algoritme op de Raspberry Pi 4 bedraagt 470 seconden, dit is zowat acht keer langer dan het snelste systeem dat in deze test werd gebruikt. De indrukwekkendheid van de Mandelbrot test op het Raspberry Pi 4 systeem wordt pas duidelijk wanneer de prijs ervan wordt vergeleken met de andere toestellen die werden gebruikt voor deze research. De Pi 4 heeft namelijk een prijskaartje dat elf keer kleiner is dan dit van het M1 toestel.
+
+Aan de hand van de resultaten van de Mandelbrot performantietest en aan de uitstekende beschikbaarheid van Python ontwikkelsoftware is het plausibel om te stellen dat moderne systemen die zijn uitgerust met ARM processoren geschikt zijn voor Python ontwikkeling. De Raspberry Pi 4 is in staat om uitstekende performantie te leveren voor een geringe kost en laat op die manier zien waarom hij door scholen en universiteiten over de hele wereld wordt gebruikt om studenten te leren programmeren.
+
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=\linewidth]{img/mandelbrot_benchmark.png}
+	\caption{Een overzicht van de Mandelbrot benchmark}
+\end{figure}
+
+\subsection{Programmeren in Java}
+Java is nog steeds een populaire programmeertaal in het jaar 2022. Naast Java staat ook Kotlin, die grotendeels gebaseerd is op Java, bovenaan de ranglijsten. De populariteit van Java en Kotlin is grotendeels te danken aan het Android besturingssysteem die terug te vinden is in toestellen gaande van smartphones tot slimme koelkasten. Het spreekt dus voor zich dat een groot aandeel van de ontwikkelaars en softwarebedrijven Java ontwikkeling zien als een van hun belangrijkste prioriteiten \autocite{StackOverflow2020}. 
+
+Om aan Java ontwikkeling te kunnen doen, heeft een ontwikkelaar nood aan de \textit{Java Runtime Environment}, \textit{Java Development Kit} en een\textit{ integrated development environment} (IDE). Op het Raspberry Pi- en macOS platform voor ARM toestellen, zijn deze te verkrijgen via de website van Oracle of via de APT en Homebrew pakketbeheerprogramma's. IntelliJ, Eclipse, NetBeans en BlueJ zijn allen gerespecteerde en vaak gebruikte IDE’s om aan Java ontwikkeling te doen in een professionele of educatieve omgeving. In het kader van dit onderzoek werd Eclipse gekozen als de geprefereerde IDE aangezien deze wordt gebruikt in verschillende opleidingsonderdelen. De Eclipse Java IDE is kosteloos te verkrijgen via de webpagina van de Eclipse Foundation \autocite{EclipseFoundation2022}.
+
+Om de gebruikerservaring van Java ontwikkeling met Eclipse op de ARM versies van Linux en macOS te testen is er geopteerd geweest om enkele opdrachten te herprogrammeren gaande van Object-oriented software development 1 tot Advanced Software development 1. Deze zijn allen zonder problemen uitgevoerd op het Raspberry Pi 4 systeem en de met M1 \textit{Apple Silicon} uitgeruste Macbook.
+
+Op het Windows 11 on ARM toestel verliep de ervaring echter minder vlot. De enige manier waarop de \textit{Java Development Kit} te verkrijgen is, is via een blogpost op het 
+Microsoft Developers forum \autocite{Borges2020}. Dit is allesbehalve een voordehandliggende en gebruikersvriendelijke oplossing. Het gebrek aan adequate ondersteuning wordt alleen maar duidelijker wanneer men de Eclipse editor probeert te verkrijgen. Deze is namelijk beschikbaar voor elk platform behalve Windows on ARM. Tot overmaat van ramp leverde de zoektocht naar een volwaardig alternatief voor Eclipse geen resultaten op. De enige manier om aan Java ontwikkeling te doen op het Windows on ARM platform, is door middel van een \textit{text editor} zoals Vim, Emacs of Nano. Een \textit{text editor} geeft in tegenstelling tot een \textit{code editor} geen feedback of code-suggesties. Deze aanpak is vaak voordelig voor ervaren programmeurs die reeds een meesterschap hebben bereikt in een bepaalde programmeertaal, maar dit is echter niet aan te raden voor beginners en studenten.
+
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=\linewidth]{img/java_development.png}
+	\caption{Een overzicht Java ontwikkeling op de Raspberry Pi 4 en Apple Silicon Macbook \autocite{EclipseFoundation2022}}
+\end{figure}
+
+\subsection{Virtualisatiesoftware}
+Virtualisatiesoftware is essentieel voor elke ICT professional en student. Het stelt de gebruiker in staat om een virtuele instantie te creëren van een besturingssysteem naar keuze. Een praktische toepassing is bijvoorbeeld studenten die Linux wensen te installeren en gebruiken zonder zich er voor een langere tijd aan te verbinden of zonder de nood aan een extra toestel. Verder kan virtualisatie de flexibiliteit en schaalbaarheid van een onderneming vergroten en aanzienlijke kostenbesparingen opleveren. Het kan tenslotte ook leiden tot betere prestaties en een betere beschikbaarheid van resources, wat op termijn leidt tot eenvoudiger IT management die gepaard gaat met lagere beheer- en eigendomskosten \autocite{VMware2016}.
+
+Gezien de geringe hoeveelheid performantie waartoe de Raspberry PI 4 toegang tot heeft, zou het onverstandig zijn om middelen toe te wijzen aan een klassieke hypervisor. Dit betekent echter niet dat de Pi niet in staat is om gevirtualiseerde Docker containers te draaien die een minimum aan impact hebben op het algemene gebruiksgemak. Het gebruik van Docker op Raspberry Pi OS komt later dit hoofdstuk nog aan bod.
+
+VirtualBox is een vaak gebruikte virtualisatie tool door professionele informatici en studenten. Het stelt gebruikers in staat om een groot aantal aan besturingssystemen te virtualiseren op een x86 instantie van Linux, macOS of Windows \autocite{VirtualBox2003}. Deze kerndoelstelling is dan ook terug te vinden op de voorpagina van hun website. Dit impliceert dat de makers van VirtualBox, Oracle, zich gefocust hebben op de markt van x86 emulatie en dus geen verdere intenties hebben om zich te richten op de markt van ARM virtualisatie.
+
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=\linewidth]{img/virtualbox.png}
+	\caption{De missie van VirtualBox \autocite{VirtualBox2003}}
+\end{figure}
+
+Parallels Desktop is software die gebruikt wordt voor hardwarevirtualisatie op het macOS en Chrome OS besturingssysteem. De Parallels hypervisor komt met geavanceerde functies en een uitstekende integratie met het host systeem. Zo zijn bijvoorbeeld alle bestanden op het hostsysteem beschikbaar op het gevirtualiseerde systeem \autocite{Parallels2009}. Sinds versie 16.5 biedt Parallels ondersteuning voor \textit{Apple Silicon} processors en is het bijgevolg mogelijk om ARM besturingssystemen te virtualiseren \autocite{Vogel2021}. Hiertoe behoren Windows 10 en 11 on ARM en alle Linuxdistributies die een ARM versie beschikbaar stellen. 
+
+Parallels is een eenvoudig te gebruiken hypervisor die voornamelijk gericht is op het bieden van een uitstekende ervaring aan beginnende gebruikers die niet noodzakelijk informatici zijn \autocite{Parallels2009}. Dit wordt weerspiegeld in het venster waar een gebruiker een nieuwe virtuele machine kan creëren. Daar kan een gebruiker kiezen tussen enkele van de meest voorkomende besturingssystemen. Dit betekent echter niet dat Parallels geen opties bevat voor geavanceerde gebruikers. Het is nog steeds mogelijk om een virtuele machine aan te maken op basis van een ISO-bestand dat de gebruiker eerder heeft gedownload.
+
+De Parallels Desktop hypervisor biedt een uitstekende gebruikerservaring voor zowel beginnende als gevorderde gebruikers. Hier hangt echter een prijskaartje aan. Een licentie kost tussen de tachtig en honderd euro, afhankelijk van de versie. Verder is het ook essentieel om te vermelden dat het enkel mogelijk is om de ARM versies van besturingssystemen te virtualiseren. Als gebruiker ben je dus afhankelijk van het niveau van softwareondersteuning dat de maker van een besturingssysteem biedt.
+
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=\linewidth]{img/parallels.jpg}
+	\caption{Een overzicht van Parallels Desktop 17}
+\end{figure}
+
+\textit{Windows Subsystem for Linux} (WSL) is een compatibiliteitslaag die beschikbaar is op Windows besturingssystemen. Het biedt een gevirtualiseerde Linux-omgeving aan waarin de gebruiker Linux-tools en -programma’s kan gebruiken. Het is belangrijk om op te merken dat deze zich voornamelijk situeren in de computerterminal. Het installatieproces van WSL is identiek op x86 en ARM instanties van Windows, maar een systeem moet gebruikmaken van Windows 10 versie 2004 en hoger of Windows 11 \autocite{Microsoft2021}. De installatie van een Linuxdistributie naar keuze gebeurt via de Microsoft Store waar de meest gebruikte opties beschikbaar zijn. 
+
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=\linewidth]{img/debian.png}
+	\caption{Het Debian Linux besturingssysteem in de Microsoft Store}
+\end{figure}
+
+De integratie van WSL in Windows on ARM geeft gebruikers een basis Linux-omgeving die kan gebruikt worden voor simpele taken, maar het is geen volwaardige vervanging voor een hypervisor zoals VirtualBox, Parallels of VMware.
+
+\subsection{Docker containervirtualisatie}
+Docker is een platform die gebruikt wordt voor het ontwikkelen, distribueren en uitvoeren van applicaties, verder stelt het de gebruiker in staat om zijn/haar applicaties te scheiden van de eigen infrastructuur. Het kan gebruikt worden om code te delen, het pushen van een applicatie naar een testomgeving, het zoeken naar software bugs enzovoort. Docker heeft een minimale impact op de performantie van het host systeem en het biedt een kosteneffectief alternatief voor virtuele machines die gebaseerd zijn op hypervisors. Docker maakt gebruik van \textit{images}, dit zijn \textit{read-only} sjablonen met instructies om een \textit{container} te maken. Deze modulaire aanpak maakt het gemakkelijk om een bestaande \textit{image} aan te passen naargelang de eigen noden. Een gebruiker kan een \textit{image} specificeren aan de hand van een Dockerfile die is opgebouwd uit een eenvoudige syntaxis. Wanneer een gebruiker wijzigingen aanbrengt in deze file en het image heropbouwt, worden enkel de lagen veranderd die zijn heropgebouwd. Deze eigenschap zorgt voor de uitstekende performantie en snelheid van \textit{images}, in vergelijking met andere virtualisatietechnieken \autocite{Docker2020}.
+
+Docker kan gemakkelijk geïnstalleerd worden op de ARM edities van Linux en macOS door middel van de APT en Homebrew pakketbeheerprogramma’s. Om te verifiëren of de installatie van Docker succesvol is, volstaat het om de “hello-world” container uit te voeren \autocite{Andrews2019}. Deze zou de volgende tekst moeten opleveren:
+
+\begin{lstlisting}
+Hello from Docker!
+This message shows that your installation appears to be 
+working correctly.
+	
+To generate this message, Docker took the following steps:
+1. The Docker client contacted the Docker daemon.
+2. The Docker daemon pulled the "hello-world" image from 
+the Docker Hub. (arm64v8)
+3. The Docker daemon created a new container from that image 
+which runs the executable that produces the output you are 
+currently reading.
+4. The Docker daemon streamed that output to the Docker client,
+which sent it to your terminal.
+\end{lstlisting}
+
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=\linewidth]{img/docker.png}
+	\caption{Docker op het Raspberry Pi- en macOS besturingssysteem}
+\end{figure}
 
 \pagebreak
 \section{Proof-of-concept Swift applicatie}
