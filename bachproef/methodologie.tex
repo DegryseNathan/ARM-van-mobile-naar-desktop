@@ -17,23 +17,23 @@ Dit onderdeel van de studie is gericht op het onderzoeken van de software compat
 
 Het is uiteraard onmogelijk om elke vorm van computergebruik te onderzoeken, vandaar dat elke gekozen toepassing bij de scenario’s gepaard zal gaan met een verklaring omtrent de relevantie ervan.
 
-Deze praktische opstellingen zullen uitgevoerd worden aan de hand van twee toestellen. Het eerste apparaat is een Raspberry Pi 4 die beschikt over een quad core Cortex-A72 (ARM v8) 64-bit SoC en 4GB LPDDR4-3200 SDRAM \autocite{Pi2021}. Dit toestel maakt gebruik van Raspberry Pi OS, voorheen bekend als \textit{Raspbian}. Deze Linuxdistributie maakt deel uit van de \textit{Debian} familie en is grotendeels gebaseerd op de populaire Ubuntu \textit{distro}. Raspberry Pi OS is echter sterk geoptimaliseerd en gespecialiseerd voor de familie van Raspberry Pi toestellen die gebruikmaken van ARM processoren. Het voornaamste verschil met andere Linuxdistributies is de relatief eenvoudige LXDE desktopomgeving die is aangepast om minder resources te verbruiken \autocite{Pi2011}.
+Deze praktische opstellingen zullen uitgevoerd worden aan de hand van twee toestellen. Het eerste apparaat is een Raspberry Pi 4 die beschikt over een \textit{quad core} Cortex-A72 (ARM v8) 64-bit SoC en 4GB LPDDR4-3200 SDRAM \autocite{Pi2021}. Dit toestel maakt gebruik van Raspberry Pi OS, voorheen bekend als \textit{Raspbian}. Deze Linuxdistributie maakt deel uit van de \textit{Debian} familie en is grotendeels gebaseerd op de populaire Ubuntu \textit{distro}. Raspberry Pi OS is echter sterk geoptimaliseerd en gespecialiseerd voor de familie van Raspberry Pi toestellen die gebruikmaken van ARM processoren. Het voornaamste verschil met andere Linuxdistributies is de relatief eenvoudige LXDE desktopomgeving die is aangepast om minder resources te verbruiken \autocite{Pi2011}.
 
 Het tweede apparaat dat deel uitmaakt van deze studie is een 13‑inch MacBook Pro die is uitgerust met een M1 \textit{Apple Silicon} processor. Dit toestel zal gebruikt worden om de gebruikerservaring en de software ondersteuning te testen op het macOS (ARM) platform. Bij het ontwikkelen van deze nieuwe processorarchitectuur heeft Apple ernaar gestreefd om een desktopervaring te bieden die evenwaardig is aan of beter dan het huidige macOS x86-64 platform \autocite{Apple2020}. Dit onderzoek zal deze gedurfde marketing beweringen uiteraard in vraag stellen en testen.
 
-Om het Windows 11 on ARM besturingssysteem te testen zal deze research gebruikmaken van een virtuele opstelling door middel van Parallels Desktop 17. Deze versie van de bekende virtualisatiesoftware ondersteunt de \textit{Apple Silicon} architectuur en voorziet een goede integratie tussen het host- en gevirtualiseerde systeem. Deze werkwijze gaat echter wel gepaard met een bepaald percentage aan prestatieverlies en enkele eigenaardigheden, echter in het kader van dit onderzoek zal deze virtuele benadering volstaan.
+Om het Windows 11 on ARM besturingssysteem te testen zal dit onderzoek gebruikmaken van een virtuele opstelling door middel van Parallels Desktop 17. Deze versie van de bekende virtualisatiesoftware ondersteunt de \textit{Apple Silicon} architectuur en voorziet een goede integratie tussen het host- en gevirtualiseerde systeem. Deze werkwijze gaat echter wel gepaard met een bepaald percentage aan prestatieverlies en enkele eigenaardigheden, echter in het kader van dit onderzoek zal deze virtuele benadering volstaan.
 
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=100mm, scale=0.5]{img/specificaties_winARM.png}
-	\caption{Specificaties van het gevirtualiseerde systeem Windows 11 on ARM systeem}
+	\caption{Specificaties van het gevirtualiseerde Windows 11 on ARM systeem}
 	\end{figure}
 
 \newpage
 \section{Scenario 1: alledaags gebruik}
 Dit eerste scenario omvat software die vrijwel ondenkbaar is bij hedendaagse kantoorjobs en bachelor/master opleidingen. Een studie gevoerd door \textcite{Braganza2022} bracht aan het licht dat browsers gebaseerd op de Chromium \textit{engine}, Microsoft Office en Slack veruit de meest gebruikte applicaties zijn door professionals met een kantoorjob. Indien laptops en desktops met ARM processoren willen doorbreken bij het grote publiek, is het essentieel dat deze programma’s een gebruikerservaring aanbieden die niet te onderscheiden is van deze op x86 toestellen.
 
-\subsubsection{Raspberry Pi OS}
+\subsection{Raspberry Pi OS}
 Microsoft Office is tot op de dag van vandaag nog steeds veruit de meest populaire office suite. Deze populariteit kan verklaard worden door de dominantie in de onderwijs- en businessmarkt. Ondanks deze populariteit is Microsoft Office niet beschikbaar op Linux gebaseerde besturingssystemen. In dit scenario is de keuze tussen een x86 of een ARM systeem dus irrelevant. Desondanks dit opvallend tekort zijn Linux computers niet afgeschreven voor kantoorgebruik. LibreOffice is sinds jaar en dag een uitstekende optie voor gebruikers die niet wensen te betalen voor een Office 365 abonnement of een eenmalige aankoop van Microsoft Office. LibreOffice valt onder de noemer van de opensourcesoftware en is bijgevolg gratis voor de eindgebruiker. Sommigen zullen de grafische gebruikersomgeving wat verouderd en rudimentair vinden, maar verder biedt dit softwarepakket een gebruikerservaring die evenwaardig is met andere office software. Indien een gebruiker zou overschakelen naar LibreOffice, moet deze aanvankelijk bereid zijn om sommige taken opnieuw te leren, maar na een korte transitieperiode zou hij/zij geen verdere tekortkomingen of problemen mogen ondervinden. Dit gezegd zijnde, is niet elk bedrijf bereid om Microsoft Office aan de kant te schuiven voor een ander product louter op basis van het feit dat het merendeel van de medewerkers vertrouwd zijn met de Microsoft variant. Indien een gebruiker toch wenst gebruik te maken van Microsoft Office, dan is dit mogelijk via de browser. Deze variant biedt echter niet dezelfde functionaliteit als de desktop variant, maar voor alledaags gebruik zou deze moeten volstaan.
 
 \begin{figure}[!h]
@@ -53,7 +53,7 @@ Slack is het communicatiemiddel bij uitstek in de bedrijfswereld en is vandaar u
 
 Chromium is de standaardbrowser op het Raspberry Pi OS besturingssysteem. Dit is een open source variant van de Google Chrome webbrowser die gericht is op eenvoud, stabiliteit en performantie \autocite{ChromiumProject2009}. Een van de grootste nadelen die komt bij het gebruik van Chromium is dat het geen integratie met Google services ondersteunt. Een gebruiker kan bijvoorbeeld een account aanmaken, maar dit is enkel een lokaal account. Het is bijgevolg niet mogelijk om in te loggen op een werk- of privé Google-account waar men bladwijzers, data of andere instellingen kan importeren. Verder zijn de populaire Google Chrome en Microsoft Edge browsers niet ondersteund op Linux besturingssystemen die uitgevoerd worden op een ARM processor. Mozilla’s Firefox webbrowser is het enige volwaardige alternatief voor Chromium.
 
-\subsubsection{macOS Monterey Apple Silicon}
+\subsection{macOS Monterey Apple Silicon}
 De situatie verbetert aanzienlijk wanneer er wordt overgeschakeld naar macOS Monterey op een \textit{Apple Silicon} toestel. Zoals eerder werd aangehaald, verstrekte Apple enkele maanden voor de officiële release van hun nieuwe architectuur een \textit{Developer Transition Kit} (DTK). Dit toestel gaf ontwikkelaars de mogelijkheid om hun bestaande software of hun nieuwe projecten te hercompileren zodat ze een \textit{native} versie konden aanbieden \autocite{Apple2020}. Deze aanpak lijkt grotendeels succesvol te zijn geweest aangezien alle te testen applicaties in dit scenario \textit{native} verkrijgbaar zijn en een gebruikerservaring aanbieden die niet te onderscheiden is van macOS Monterey die draait op een x86 systeem.
 
 Slack en alle Microsoft Office applicaties afgezien van Microsoft Teams, zijn vrij te verkrijgen in de App Store. Microsoft Teams dient gedownload te worden via de browser, dit is echter ook het geval bij de x86 variant van macOS Monterey. Een eindgebruiker heeft als het ware geen idee dat zijn/haar applicaties actief zijn op een systeem dat gebruik maakt van een processorarchitectuur die verschillend is van hetgeen waar hij/zij tot dan toe vertrouwd mee was. Naast het betaalde Microsoft Office pakket stelt Apple hun iWork suite gratis beschikbaar voor iedereen die een \textit{Apple ID} heeft. Dit softwarepakket is geen volwaardig alternatief voor Microsoft Office, maar ze biedt voldoende mogelijkheden voor gewone eindgebruikers en studenten.
@@ -64,7 +64,7 @@ Slack en alle Microsoft Office applicaties afgezien van Microsoft Teams, zijn vr
 	\caption{Pages en Microsoft Word op het Apple Silicon platform}
 \end{figure}
 
-De enige manier waarop een eindgebruiker te weten kan komen of een applicatie gecompileerd is voor de Apple Silicon architectuur of gebruikmaakt van de Rosetta 2 \textit{translation layer} is de activiteitenweergave applicatie. Deze biedt een handig overzicht van de gebruikte processorarchitectuur in de \textit{kind} kolom. In het onderstaande voorbeeld is er te zien dat Microsoft OneDrive en WhatsApp nog niet \textit{native} ondersteund zijn.
+De enige manier waarop een eindgebruiker te weten kan komen of een applicatie gecompileerd is voor de \textit{Apple Silicon} architectuur of gebruikmaakt van de \textit{Rosetta 2 translation layer} is de activiteitenweergave applicatie. Deze biedt een handig overzicht van de gebruikte processorarchitectuur in de \textit{kind} kolom. In het onderstaande voorbeeld is er te zien dat Microsoft OneDrive en WhatsApp nog niet \textit{native} ondersteund zijn.
 
 \begin{figure}[!h]
 	\centering
@@ -72,7 +72,7 @@ De enige manier waarop een eindgebruiker te weten kan komen of een applicatie ge
 	\caption{Een overzicht van de activiteitenweergave applicatie}
 \end{figure}
 
-Wat webbrowsers betreft is er geen tekort aan opties op macOS. Google Chrome, Microsoft Edge, Mozilla Firefox, Brave enzovoort worden allemaal ondersteund op het \textit{Apple Silicon} platform. Wanneer een gebruiker een browser naar keuze wenst te downloaden, krijgt deze een dialoogvenster te zien waar hij/zij kan kiezen tussen de Intel x86 variant of de versie die gericht is op het \textit{Apple Silicon} platform.
+Wat webbrowsers betreft is er geen tekort aan opties op macOS. Google Chrome, Microsoft Edge, Mozilla Firefox, Brave enzovoort worden allemaal \textit{native} ondersteund op het \textit{Apple Silicon} platform. Wanneer een gebruiker een browser naar keuze wenst te downloaden, krijgt deze een dialoogvenster te zien waar hij/zij kan kiezen tussen de Intel x86 variant of de versie die gericht is op het \textit{Apple Silicon} platform.
 
 \begin{figure}[!h]
 	\centering
@@ -80,10 +80,10 @@ Wat webbrowsers betreft is er geen tekort aan opties op macOS. Google Chrome, Mi
 	\caption{De Microsoft Edge download pagina \autocite{Microsoft2022}}
 \end{figure}
 
-\subsubsection{Windows 11 on ARM}
-Net als op macOS voor de \textit{Apple Silicon} architectuur, zijn de meeste native Windows 11 on ARM applicaties verkrijgbaar via de appstore die gericht is op het eigen platform, in dit geval is dit de Microsoft Store die voorheen bekend stond als de Windows Store. Slack heeft een \textit{native} versie die compatibel is met Windows 10 en Windows 11 on ARM en deze bevat alle toepassingen die aanwezig zijn op het Slack communicatieplatform.
+\subsection{Windows 11 on ARM}
+Net als op macOS voor de \textit{Apple Silicon} architectuur, zijn de meeste \textit{native} Windows 11 on ARM applicaties verkrijgbaar via de appstore die gericht is op het eigen platform, in dit geval is dit de Microsoft Store die voorheen bekend stond als de Windows Store. Slack heeft een \textit{native} versie die compatibel is met Windows 10 en Windows 11 on ARM en deze bevat alle toepassingen die aanwezig zijn op het Slack communicatieplatform.
 
-Microsoft Office heeft ook een native Windows on ARM versie, deze is echter vreemd genoeg niet terug te vinden in de Microsoft Store. Een gebruiker dient deze te downloaden via de Office 365 portaalsite. Verder krijgt een gebruiker geen indicatie van welke versies van Microsoft Office er beschikbaar zijn om te downloaden. Enerzijds beperkt deze aanpak mogelijke verwarring tot een minimum, maar anderzijds is het belangrijk om te weten of de \textit{native} versie beschikbaar is, aangezien deze stabieler is en zorgt voor betere prestaties. Net als op het macOS platform kan een gebruiker op Windows 11 on ARM de architectuur van een applicatie raadplegen. Dit wordt gedaan door te navigeren naar de taakbeheer applicatie en te klikken op de “details” kolom \autocite{Venkat2020}.
+Microsoft Office heeft ook een \textit{native} Windows on ARM versie, deze is echter vreemd genoeg niet terug te vinden in de Microsoft Store. Een gebruiker dient deze te downloaden via de Office 365 portaalsite. Verder krijgt een gebruiker geen indicatie van welke versies van Microsoft Office er beschikbaar zijn om te downloaden. Enerzijds beperkt deze aanpak mogelijke verwarring tot een minimum, maar anderzijds is het belangrijk om te weten of de \textit{native} versie beschikbaar is, aangezien deze stabieler is en zorgt voor betere prestaties. Net als op het macOS platform kan een gebruiker op Windows 11 on ARM de architectuur van een applicatie raadplegen. Dit wordt gedaan door te navigeren naar de taakbeheer applicatie en te klikken op de “details” kolom \autocite{Venkat2020}.
 
 \begin{figure}[!h]
 	\centering
@@ -112,7 +112,7 @@ Raspberry Pi- en macOS maken het de gebruiker gemakkelijk aangezien deze twee be
 Alle bovengenoemde platformen voeren de grafische en console variant van de Git \textit{client} uit zonder enige vorm van problemen en de gebruikerservaring is niet te onderscheiden van deze op x86 platformen.
 
 \subsection{Programmeren in Python}
-De Python programmeertaal is sinds zijn ontstaan geliefd bij zowel professionele ontwikkelaars en studenten omwille van de beginnersvriendelijke syntaxis en de geringe hoeveelheid aan performantie die een computer nodig heeft om met deze programmeertaal te werken \autocite{StackOverflow2020}. Dit betekent echter niet dat een ontwikkelaar niet in staat is om complexe algoritmes to coderen in Python. Om te onderzoeken of een ontwikkelaar of een student een ARM computer kan gebruiken om in Python te programmeren, zal deze sectie de beschikbaarheid van de programmeertaal, de beschikbaarheid van een geschikte \textit{integrated development environment} (IDE) en de prestaties van een veeleisende Python benchmark evalueren.
+De Python programmeertaal is sinds zijn ontstaan geliefd bij zowel professionele ontwikkelaars en studenten omwille van de beginnersvriendelijke syntaxis en de geringe hoeveelheid aan performantie die een computer nodig heeft om met deze programmeertaal te werken \autocite{StackOverflow2020}. Dit betekent echter niet dat een ontwikkelaar niet in staat is om complexe algoritmes to coderen in Python. Om te onderzoeken of een ontwikkelaar of een student een ARM computer kan gebruiken om in Python te programmeren, zal deze sectie de beschikbaarheid van de programmeertaal, de beschikbaarheid van een geschikte \textit{integrated development environment} (IDE) en de prestaties van een veeleisende Python \textit{benchmark} evalueren.
 
 De Python programmeertaal is een softwarepakket dat standaard geïnstalleerd is op de meeste Linuxdistributies. Dit is ook het geval bij het op ARM gebaseerde Raspberry Pi OS waar zowel versie 2 als 3 beschikbaar zijn voor de gebruiker. Verder stelt Raspberry Pi OS enkele eenvoudige Python IDE’s ter beschikking als onderdeel van de voorgeïnstalleerde software. Deze komen in de vorm van Geany en Thonny, dit zijn beide Python programmeeromgevingen die gericht zijn op de markt van beginnende programmeurs of kinderen en tieners die hun eerste lijnen code willen schrijven \autocite{Fromaget2021}. Verder kan een gebruiker de populaire Visual Studio Code broncode-editor downloaden via het \textit{Advanced Package Tool} (APT) pakketbeheerprogramma die terug te vinden is op alle Linuxdistributies die gebaseerd zijn op Debian.
 
@@ -135,7 +135,7 @@ Java is nog steeds een populaire programmeertaal in het jaar 2022. Naast Java st
 
 Om aan Java ontwikkeling te kunnen doen, heeft een ontwikkelaar nood aan de \textit{Java Runtime Environment}, \textit{Java Development Kit} en een\textit{ integrated development environment} (IDE). Op het Raspberry Pi- en macOS platform voor ARM toestellen, zijn deze te verkrijgen via de website van Oracle of via de APT en Homebrew pakketbeheerprogramma's. IntelliJ, Eclipse, NetBeans en BlueJ zijn allen gerespecteerde en vaak gebruikte IDE’s om aan Java ontwikkeling te doen in een professionele of educatieve omgeving. In het kader van dit onderzoek werd Eclipse gekozen als de geprefereerde IDE aangezien deze wordt gebruikt in verschillende opleidingsonderdelen. De Eclipse Java IDE is kosteloos te verkrijgen via de webpagina van de Eclipse Foundation \autocite{EclipseFoundation2022}.
 
-Om de gebruikerservaring van Java ontwikkeling met Eclipse op de ARM versies van Linux en macOS te testen is er geopteerd geweest om enkele opdrachten te herprogrammeren gaande van Object-oriented software development 1 tot Advanced Software development 1. Deze zijn allen zonder problemen uitgevoerd op het Raspberry Pi 4 systeem en de met M1 \textit{Apple Silicon} uitgeruste Macbook.
+Om de gebruikerservaring van Java ontwikkeling met Eclipse op de ARM versies van Linux en macOS te testen is er geopteerd geweest om enkele opdrachten te herprogrammeren gaande van \textit{Object-oriented software development 1} tot \textit{Advanced Software development 1}. Deze zijn allen zonder problemen uitgevoerd op het Raspberry Pi 4 systeem en de met M1 \textit{Apple Silicon} uitgeruste Macbook.
 
 Op het Windows 11 on ARM toestel verliep de ervaring echter minder vlot. De enige manier waarop de \textit{Java Development Kit} te verkrijgen is, is via een blogpost op het 
 Microsoft Developers forum \autocite{Borges2020}. Dit is allesbehalve een voordehandliggende en gebruikersvriendelijke oplossing. Het gebrek aan adequate ondersteuning wordt alleen maar duidelijker wanneer men de Eclipse editor probeert te verkrijgen. Deze is namelijk beschikbaar voor elk platform behalve Windows on ARM. Tot overmaat van ramp leverde de zoektocht naar een volwaardig alternatief voor Eclipse geen resultaten op. De enige manier om aan Java ontwikkeling te doen op het Windows on ARM platform, is door middel van een \textit{text editor} zoals Vim, Emacs of Nano. Een \textit{text editor} geeft in tegenstelling tot een \textit{code editor} geen feedback of code-suggesties. Deze aanpak is vaak voordelig voor ervaren programmeurs die reeds een meesterschap hebben bereikt in een bepaalde programmeertaal, maar dit is echter niet aan te raden voor beginners en studenten.
@@ -143,11 +143,11 @@ Microsoft Developers forum \autocite{Borges2020}. Dit is allesbehalve een voorde
 \begin{figure}[!h]
 	\centering
 	\includegraphics[width=\linewidth]{img/java_development.png}
-	\caption{Een overzicht Java ontwikkeling op de Raspberry Pi 4 en Apple Silicon Macbook \autocite{EclipseFoundation2022}}
+	\caption{Een overzicht Java ontwikkeling op de Raspberry Pi 4 en Apple Silicon \autocite{EclipseFoundation2022}}
 \end{figure}
 
 \subsection{Virtualisatiesoftware}
-Virtualisatiesoftware is essentieel voor elke ICT professional en student. Het stelt de gebruiker in staat om een virtuele instantie te creëren van een besturingssysteem naar keuze. Een praktische toepassing is bijvoorbeeld studenten die Linux wensen te installeren en gebruiken zonder zich er voor een langere tijd aan te verbinden of zonder de nood aan een extra toestel. Verder kan virtualisatie de flexibiliteit en schaalbaarheid van een onderneming vergroten en aanzienlijke kostenbesparingen opleveren. Het kan tenslotte ook leiden tot betere prestaties en een betere beschikbaarheid van resources, wat op termijn leidt tot eenvoudiger IT management die gepaard gaat met lagere beheer- en eigendomskosten \autocite{VMware2016}.
+Virtualisatiesoftware is essentieel voor elke ICT professional en student. Het stelt de gebruiker in staat om een virtuele instantie te creëren van een besturingssysteem naar keuze. Een praktische toepassing is bijvoorbeeld studenten die Linux wensen te installeren en gebruiken zonder zich er voor een langere tijd aan te verbinden of zonder de nood aan een extra toestel. Verder kan virtualisatie de flexibiliteit en schaalbaarheid van een onderneming vergroten en aanzienlijke kostenbesparingen opleveren. Het kan tenslotte ook leiden tot betere prestaties en een betere beschikbaarheid van middelen, wat op termijn leidt tot eenvoudiger IT management die gepaard gaat met lagere beheer- en eigendomskosten \autocite{VMware2016}.
 
 Gezien de geringe hoeveelheid performantie waartoe de Raspberry PI 4 toegang tot heeft, zou het onverstandig zijn om middelen toe te wijzen aan een klassieke hypervisor. Dit betekent echter niet dat de Pi niet in staat is om gevirtualiseerde Docker containers te draaien die een minimum aan impact hebben op het algemene gebruiksgemak. Het gebruik van Docker op Raspberry Pi OS komt later dit hoofdstuk nog aan bod.
 
@@ -182,9 +182,9 @@ De Parallels Desktop hypervisor biedt een uitstekende gebruikerservaring voor zo
 De integratie van WSL in Windows on ARM geeft gebruikers een basis Linux-omgeving die kan gebruikt worden voor simpele taken, maar het is geen volwaardige vervanging voor een hypervisor zoals VirtualBox, Parallels of VMware.
 
 \subsection{Docker containervirtualisatie}
-Docker is een platform die gebruikt wordt voor het ontwikkelen, distribueren en uitvoeren van applicaties, verder stelt het de gebruiker in staat om zijn/haar applicaties te scheiden van de eigen infrastructuur. Het kan gebruikt worden om code te delen, het pushen van een applicatie naar een testomgeving, het zoeken naar software bugs enzovoort. Docker heeft een minimale impact op de performantie van het host systeem en het biedt een kosteneffectief alternatief voor virtuele machines die gebaseerd zijn op hypervisors. Docker maakt gebruik van \textit{images}, dit zijn \textit{read-only} sjablonen met instructies om een \textit{container} te maken. Deze modulaire aanpak maakt het gemakkelijk om een bestaande \textit{image} aan te passen naargelang de eigen noden. Een gebruiker kan een \textit{image} specificeren aan de hand van een Dockerfile die is opgebouwd uit een eenvoudige syntaxis. Wanneer een gebruiker wijzigingen aanbrengt in deze file en het image heropbouwt, worden enkel de lagen veranderd die zijn heropgebouwd. Deze eigenschap zorgt voor de uitstekende performantie en snelheid van \textit{images}, in vergelijking met andere virtualisatietechnieken \autocite{Docker2020}.
+Docker is een platform die gebruikt wordt voor het ontwikkelen, distribueren en uitvoeren van applicaties, verder stelt het de gebruiker in staat om zijn/haar applicaties te scheiden van de eigen infrastructuur. Het kan gebruikt worden om code te delen, het pushen van een applicatie naar een testomgeving, het zoeken naar software bugs enzovoort. Docker heeft een minimale impact op de performantie van het host systeem en het biedt een kosteneffectief alternatief voor virtuele machines die gebaseerd zijn op hypervisors. Docker maakt gebruik van \textit{images}, dit zijn \textit{read-only} sjablonen met instructies om een \textit{container} te maken. Deze modulaire aanpak maakt het gemakkelijk om een bestaande \textit{image} aan te passen naargelang de eigen noden. Een gebruiker kan een \textit{image} specificeren aan de hand van een Dockerfile die is opgebouwd uit een eenvoudige syntaxis. Wanneer een gebruiker wijzigingen aanbrengt in deze file en het \textit{image} heropbouwt, worden enkel de lagen veranderd die zijn heropgebouwd. Deze eigenschap zorgt voor de uitstekende performantie en snelheid van \textit{images}, in vergelijking met andere virtualisatietechnieken \autocite{Docker2020}.
 
-Docker kan gemakkelijk geïnstalleerd worden op de ARM edities van Linux en macOS door middel van de APT en Homebrew pakketbeheerprogramma’s. Om te verifiëren of de installatie van Docker succesvol is, volstaat het om de “hello-world” container uit te voeren \autocite{Andrews2019}. Deze zou de volgende tekst moeten opleveren:
+Docker kan gemakkelijk geïnstalleerd worden op de ARM edities van Linux en macOS door middel van de APT en Homebrew pakketbeheerprogramma’s. Om te verifiëren of de installatie van Docker succesvol is, volstaat het om de “hello-world” \textit{container} uit te voeren \autocite{Andrews2019}. Deze zou de volgende tekst moeten opleveren:
 
 \begin{lstlisting}
 Hello from Docker!
@@ -202,10 +202,36 @@ currently reading.
 which sent it to your terminal.
 \end{lstlisting}
 
+\pagebreak
+Zoals te zien in de onderstaande afbeelding, de macOS en Linux ARM versie van Docker is volwaardig en deze werkt zoals het hoort.
+
 \begin{figure}[!h]
 	\centering
 	\includegraphics[width=\linewidth]{img/docker.png}
 	\caption{Docker op het Raspberry Pi- en macOS besturingssysteem}
+\end{figure}
+
+Het is pas wanneer een gebruiker Docker probeert te installeren op het Windows on ARM platform dat er problemen ontstaan. De Docker Desktop versie die een gebruiker kan downloaden via de officiële Docker website lijkt op het eerste gezicht zonder problemen te installeren, echter wanneer men deze probeert uit te voeren na de installatie verschijnt er een error-boodschap. Dit bericht geeft aan dat het \textit{virtual machine platform} moet worden ingeschakeld en vervolgens dat WSL 2 moet worden geïnstalleerd \autocite{Docker2021}. Het \textit{virtual machine platform} kan een gebruiker inschakelen via het Windows Features paneel. WSL 2 is echter niet ondersteund op toestellen die geen Hyper-V virtualisatie ondersteuning hebben . Deze Windows hypervisor is echter enkel beschikbaar op x86-64 systemen met Intel of AMD processoren of op Windows on ARM toestellen met een Snapdragon processor. De virtuele aanpak die in dit scenario wordt gebruikt maakt echter gebruik van Parallels desktop die draait op een \textit{Apple Silicon} toestel die geen Hyper-V ondersteuning biedt. Windows on ARM toestellen met een Snapdragon processor hebben echter wel Hyper-V ondersteuning en deze toestellen kunnen bijgevolg gebruikmaken van WSL 2 \autocite{Maurer2020}.
+
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=\linewidth]{img/docker_issues_winARM.png}
+	\caption{Problemen met Docker op het Windows on ARM platform}
+\end{figure}
+
+\pagebreak
+\subsection{Computerterminal}
+ICT-professionals en studenten gebruiken de terminal van hun desktop-besturingssysteem om bepaalde taken efficiënter uit te voeren dan met een grafische gebruikersinterface. Bovendien kunnen sommige geavanceerde operaties enkel met behulp van de terminal worden uitgevoerd. Een computerterminal is een \textit{text-only} venster die bediend wordt door middel van het toetsenbord. Het spreekt voor zich dat het leren van sneltoetsen essentieel is om deskundig gebruik te maken van een terminal. 
+
+Op Linux besturingssystemen zijnde ARM of x86 zijn de GNOME-Terminal, Konsole of xterm de terminals bij uitstek. Welke terminal er standaard onderdeel uitmaakt van het besturingssysteem hangt af van de gebruikte desktopomgeving, maar ze zouden allemaal soortgelijke functionaliteiten en gebruikerservaringen moeten aanbieden. Op macOS is Terminal sinds jaar en dag de standaard terminal terwijl dit bij Windows besturingssystemen de command prompt, Powershell Console en sinds kort, de Windows Terminal zijn \autocite{Woodfine2020}. 
+
+\pagebreak
+Alle ARM besturingssystemen die zijn getest voor dit onderzoek, zijnde Raspberry Pi OS, macOS en Windows on ARM, bieden een terminal ervaring aan die niet te onderscheiden valt van hun x86 tegenhangers. In onderstaande afbeelding is te zien hoe er een SSH connectie wordt gemaakt met een lokale server. 
+
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=\linewidth]{img/ssh.png}
+	\caption{Het maken van een SSH connectie op ARM besturingssystemen}
 \end{figure}
 
 \pagebreak
@@ -314,7 +340,7 @@ Eenmaal de iOS en macOS \textit{targets} zijn toegevoegd aan het project, is het
 \end{lstlisting}
 \newpage
 
-Naast de \textit{models group} komt ook de group met alle preview content in de shared group terecht. Apple verwacht dat developers gebruikmaken van SwiftUI \textit{previews}, dit zijn voorvertoningen die live worden bijgewerkt wanneer een ontwikkelaar nieuwe elementen toevoegt of bestaande elementen aanpast/verwijdert. U kunt de standaard asset-catalogus "Preview Assets" gebruiken om voorbeeldafbeeldingen, kleuren en andere soorten assets te configureren die u normaal aan een asset-catalogus zou toevoegen. In dit project wordt de asset-catalogus gebruikt om een voorvertoning te genereren van de afbeeldingen die aan bod zullen komen in de nieuwsartikelen \autocite{VanDerLee2021}. Het is essentieel om aan te geven dat de "Preview Assets" beschikbaar zijn voor beide targets aangezien deze beide gebruik zullen maken van de afbeeldingen.
+Naast de \textit{models group} komt ook de group met alle \textit{preview content} in de \textit{shared group} terecht. Apple verwacht dat developers gebruikmaken van SwiftUI \textit{previews}, dit zijn voorvertoningen die live worden bijgewerkt wanneer een ontwikkelaar nieuwe elementen toevoegt of bestaande elementen aanpast/verwijdert. U kunt de standaard asset-catalogus 'Preview Assets' gebruiken om voorbeeldafbeeldingen, kleuren en andere soorten assets te configureren die u normaal aan een asset-catalogus zou toevoegen. In dit project wordt de asset-catalogus gebruikt om een voorvertoning te genereren van de afbeeldingen die aan bod zullen komen in de nieuwsartikelen \autocite{VanDerLee2021}. Het is essentieel om aan te geven dat de 'Preview Assets' beschikbaar zijn voor beide targets aangezien deze beide gebruik zullen maken van de afbeeldingen.
 
 \begin{figure}[!h]
     \centering
@@ -331,7 +357,7 @@ In deze fase van het project is het cruciaal om de \textit{target membership} va
     \caption{Een overzicht van het targetmembership}
 \end{figure}
 
-Tenslotte dient de \textit{views group} ook toegevoegd te worden aan de \textit{shared group}. Deze \textit{group} bestaat uit de volgende \textit{views} die gedeeld moeten worden tussen de verschillende \textit{targets}:
+Tenslotte dient de \textit{views group} ook toegevoegd te worden aan de \textit{shared group}. Deze bestaat uit de volgende \textit{views} die gedeeld moeten worden tussen de verschillende \textit{targets}:
 
 \begin{itemize}
     \item \textbf{ArticleListView:} Deze \textit{view} zal gebruikt worden om een lijstvoorstelling te genereren op basis van alle beschikbare nieuwsartikelen. Deze lijst neemt het volledige scherm in beslag op de iOS applicatie, maar neemt echter slechts een deel van het scherm in beslag op de macOS applicatie. Dit omwille van de extra schermruimte die ter beschikking is op grotere toestellen zoals laptops en desktops.
