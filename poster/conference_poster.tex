@@ -51,11 +51,12 @@
 % The widths of these boxes can be easily edited to accommodate your content as you see fit
 
 \begin{minipage}[t]{0.75\linewidth}
-\VeryHuge \color{HoGentAccent1} \textbf{Titel van uw bachelorproef} \color{Black}\\ % Title
-\Huge\textit{Ondertitel (eventueel)}\\[2.4cm] % Subtitle
-\huge \textbf{Naam Voornaam, co-promotor, promotor}\\[0.5cm] % Author(s)
+\VeryHuge \color{HoGentAccent1} \textbf{ARM: van mobiele toestellen en IoT \\\\naar de desktop } \color{Black}\\ % Title
+%\Huge\textit{Van mobiele toestellen en IoT naar de desktop}\\[2.4cm] % Subtitle
+\\
+\huge \textbf{Degryse Nathan, Mathieu Audenaert, Sharon Van Hove}\\[0.5cm] % Author(s)
 \huge Hogeschool Gent, Valentin Vaerwyckweg 1, 9000 Gent\\[0.4cm] % University/organization
-\Large \texttt{voornaam.naam@hogent.be} \\
+\Large \texttt{nathan.degryse@student.hogent.be} \\
 \end{minipage}
 %
 \begin{minipage}[t]{0.25\linewidth}
@@ -76,9 +77,7 @@
 \color{HoGentAccent1} % Navy color for the abstract
 
 \begin{abstract}
-It's only a model.
-You don't vote for kings. Who's that then? We found them. Ni! Ni! Ni! Ni!
-The nose? On second thoughts, let's not go there. It is a silly place. Bloody Peasant! And the hat. She's a witch! Where'd you get the coconuts?
+Studenten en professionals hebben meestal geen oog voor technische details en specificaties wanneer ze een nieuwe laptop of desktopcomputer wensen aan te schaffen. Doorgaans hebben consumenten nood een toestel dat goed genoeg is om te voldoen aan hun specifieke eisen en gebruikssituaties. De nakende coëxistentie van ARM- en x86-processoren op het desktop-platform zal toekomstige kopers dwingen om na te denken over hun eigen unieke gebruiksscenario's en de behoefte aan softwareondersteuning voor de toepassingen die ze op een dagelijkse basis gebruiken. Die ondersteuning van software op meerdere processorarchitecturen zal de komende jaren steeds belangrijker worden voor zowel ontwikkelaars als consumenten.
 \end{abstract}
 %----------------------------------------------------------------------------------------
 %	INTRODUCTION
@@ -88,15 +87,8 @@ The nose? On second thoughts, let's not go there. It is a silly place. Bloody Pe
 \section*{Introductie}
 \color{black}
 \color{black}
-Be quiet! Found them? In Mercia?! The coconut's tropical! But you are dressed as one… Well, what do you want? Knights of Ni, we are but simple travelers who seek the enchanter who lives beyond these woods.
+ARM processoren werden vroeger voornamelijk gebruikt in toestellen met een focus op mobiliteit en energiezuinigheid. Deze eisen zorgen ervoor dat ARM processors worden ontworpen met een focus op prestaties per watt. Dit concept is te verklaren als de hoeveelheid verwerkingscapaciteit die een processor/computer kan leveren per verbruikte watt aan energie. Het spreekt voor zich dat deze eigenschap de komende decennia een essentiële rol zal spelen bij het verlagen van het energieverbruik van individuele toestellen alsook het verlagen van de warmte uitstoot en het energieverbruik van datacenters. Tegenover de filosofie van de ARM processoren staat deze van het welbekende x86 platform die tot op de dag van vandaag dominant is in de markt van de desktop en laptop toestellen. Deze spitst zich toe op performantie en uitstekende software compatibiliteit.\\\\Deze verschillen zorgen ervoor dat er ook significante afwijkingen zijn op het gebied van het registergeheugen, de instructieset en software ondersteuning. De belangrijkste implicatie van dit gegeven is dat software die ontworpen en geschreven is voor het x86 platform niet compatibel is voor het ARM platform en vice versa. Dit houdt in dat softwareleveranciers meerdere versies van hun software moeten beschikbaar stellen om te voldoen aan de noden van hun klanten die gebruikmaken van verschillende hardware platformen. Vele softwaregiganten leveren uitstekende ondersteuning ongeacht het gekozen platform, maar toch is de compatibiliteit van de meeste software onvolmaakt of niet bestaande. Aangezien software specifiek moet geschreven worden voor het ARM platform, wegen de meeste softwareleveranciers de potentiële opbrengsten af tegenover de kosten die men moet spenderen aan het aanpassen van hun reeds bestaande software.
 
-Well, what do you want? It's only a model. Camelot! We found them. We shall say 'Ni' again to you, if you do not appease us.
-
-The nose? Shut up! Burn her! I am your king. You don't vote for kings.
-
-You can't expect to wield supreme power just 'cause some watery tart threw a sword at you! Well, we did do the nose. I don't want to talk to you no more, you empty-headed animal food trough water! I fart in your general direction! Your mother was a hamster and your father smelt of elderberries! Now leave before I am forced to taunt you a second time!
-
-Why do you think that she is a witch? We want a shrubbery!! I don't want to talk to you no more, you empty-headed animal food trough water! I fart in your general direction! Your mother was a hamster and your father smelt of elderberries! Now leave before I am forced to taunt you a second time!
 %----------------------------------------------------------------------------------------
 %	GEOLOGY
 %----------------------------------------------------------------------------------------
@@ -105,24 +97,16 @@ Why do you think that she is a witch? We want a shrubbery!! I don't want to talk
 \color{HoGentAccent1} 
 \section*{Experimenten}
 \color{black}
-A newt? Camelot! Why? No, no, no! Yes, yes. A bit. But she's got a wart.
-
-Shut up! I dunno. Must be a king. Who's that then? Look, my liege! On second thoughts, let's not go there. It is a silly place.
-
-Shut up! Will you shut up?! No, no, no! Yes, yes. A bit. But she's got a wart. He hasn't got shit all over him. It's only a model. It's only a model.
-
-Bring her forward! I don't want to talk to you no more, you empty-headed animal food trough water! I fart in your general direction! Your mother was a hamster and your father smelt of elderberries! Now leave 
-
-
-
-\color{HoGentAccent1} 
-\section*{Sectie met figuur}
-\color{black}
-
+Om te onderzoeken of desktops en laptops die gebruikmaken van een ARM processor een gebruikerservaring kunnen aanbieden die niet te onderscheiden valt van deze op een x86 toestel, heeft dit onderzoek drie ARM besturingssystemen onderworpen aan enkele testen. Scenario 1 is gericht op alledaags gebruik zoals browsen en kantoorsoftware.
+In scenario 2 komen de geavanceerde ICT toepassingen aan bod die deel uitmaken van het dagelijkse softwarepakket van een student toegepaste informatica of een ICT professional. Tenslotte heeft een \textit{proof-of-concept} applicatie aangetoond dat het mogelijk is om een eenvoudige \textit{Swift} applicatie te schrijven die uitvoerbaar is op zowel iOS als macOS en dat met een minimum aan overtollige code of verlies aan performantie. Deze opstelling is mogelijk sinds 2020 dankzij de transitie van Intel x86 processoren naar de \textit{Apple Silicon} ARM architectuur.
+\begin{center}\vspace{1cm}
+	\includegraphics[width=1.0\linewidth]{pi4.jpeg}
+	\captionof{figure}{\color{HoGentAccent5} Een overzicht van het moederbord van een Raspberry Pi 4B}
+\end{center}\vspace{1cm}
 
 \begin{center}\vspace{1cm}
-\includegraphics[width=1.0\linewidth]{grail}
-\captionof{figure}{\color{HoGentAccent5} He hasn't got shit all over him. The nose? Where'd you get the coconuts? What do you mean? We shall say 'Ni' again to you, if you do not appease us}
+\includegraphics[width=1.0\linewidth]{Apple_M1_Ultra_Family.png}
+\captionof{figure}{\color{HoGentAccent5} Een overzicht van de eerste generatie aan \textit{Apple Silicon} processoren}
 \end{center}\vspace{1cm}
 
 %------------------------------------------------
@@ -132,17 +116,14 @@ Bring her forward! I don't want to talk to you no more, you empty-headed animal 
 \color{HoGentAccent1} 
 \section*{Conclusies}
 \color{black}
-on't underestimate the Force. Oh God, my uncle. How am I ever gonna explain this? I suggest you try it again, Luke. This time, let go your conscious self and act on instinct. Don't be too proud of this technological terror you've constructed. The ability to destroy a planet is insignificant next to the power of the Force.
+Dit onderzoek kan dienen als leidraad voor it-professionals of studenten die de overschakeling naar het ARM-platform wensen te maken. Dit platform is uitermate geschikt voor studenten en professionals die hun computer gebruiken voor alledaagse taken. Studenten en professionals met een informatica achtergrond kunnen de overstap maken naar een \textit{Apple Silicon} toestel indien men bereid is om grondig onderzoek te doen omtrent de software ondersteuning van de applicaties die nodig zijn voor hun alledaagse taken. Het gebrek aan software ondersteuning op het Windows on ARM platform zorgt ervoor dat deze toestellen op dit moment nog niet geschikt zijn voor consumenten met een focus op informatica. Alleen wanneer de software ondersteuning verbetert tot op het niveau van het Windows x86 platform, zullen deze doelgroepen in staat zijn om gebruik te maken van een Windows on ARM toestel.
 %----------------------------------------------------------------------------------------
 %	FORTHCOMING RESEARCH
 %----------------------------------------------------------------------------------------
 \color{HoGentAccent1} 
 \section*{Toekomstig onderzoek}
 \color{black}
-
-I care. So, what do you think of her, Han? No! Alderaan is peaceful. We have no weapons. You can't possibly… I have traced the Rebel spies to her. Now she is my only link to finding their secret base.
-
-Kid, I've flown from one side of this galaxy to the other. I've seen a lot of strange stuff, but I've never seen anything to make me believe there's one all-powerful Force controlling everything. There's no mystical energy field that controls my destiny. It's all a lot of simple tricks and nonsense. You are a part of the Rebel Alliance and a traitor! Take her away! 
+Hoewel het ARM desktop platform nog relatief jong is, bevestigen technologie giganten zoals Apple en Microsoft hun overtuiging in dit platform door het jaarlijks uitbrengen van nieuwe hardware zoals de recent gelanceerde M2 \textit{Apple Silicon} chip en \textit{project Volterra}.  Het niveau van software ondersteuning is de afgelopen jaren exponentieel toegenomen en het is indrukwekkend hoe sommige professionals reeds gebruik kunnen maken van deze hardware voor hun alledaagse activiteiten. Om het huidige tempo van hardware- en software-innovatie op het ARM platform bij te houden, is het zinvol om deze studie te herhalen op jaarlijkse basis.
 
 
 %----------------------------------------------------------------------------------------
